@@ -289,7 +289,8 @@ module.exports = function(grunt) {
 					stylesheet: 'scss',
 					relativeFontPath: '../icons',
 					htmlDemo: false,
-					template: '<%= config.source %>/_templates/icons-template.css'
+					template: '<%= config.source %>/_templates/icons-template.css',
+					engine: 'node'
 				}
 			}
 		},

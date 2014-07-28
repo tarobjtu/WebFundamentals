@@ -1,6 +1,6 @@
 ---
 layout: landing
-title: "Get Started"
+title: "开始"
 description: "It can often seem daunting to get started building sites and experiences that work across all the devices that have access to the web."
 introduction: "It can often seem daunting to get started building sites and experiences that work across all the devices that have access to the web."
 id: getting-started

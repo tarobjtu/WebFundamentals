@@ -1,28 +1,28 @@
 ---
 layout: article
-title: "Make It Responsive"
+title: "让网站自适应"
 description: "The web is accessible on a huge range of devices from small-screen phones to huge-screen televisions. Learn how to build a site that works well across all these devices."
 introduction: "The web is accessible on a huge range of devices from small-screen phones through to huge-screen televisions. Each device presents its own unique benefits and also constraints. As a web developer, you are expected to support all ranges of devices."
 key-takeaways:
   make-responsive:
-    - Always use a viewport.
-    - Always start with a narrow viewport first and scale out.
-    - Base your breakpoints off when you need to adapt the content.
-    - Create a high-level vision of your layout across major breakpoints.
+    - 始终使用视口（viewport）。
+    - 始终从窄视口开始，然后扩展。
+    - 对内容进行响应适配时，设置临界点（breakpoints）开关。
+    - 创建跨多临界点的高级视觉布局。
 rel:
   gplusauthor: https://plus.google.com/+PaulKinlan
   twitterauthor: "@Paul_Kinlan"
 related-guides:
   responsive:
     -
-      title: Setting the viewport
+      title: 设置视口
       href: layouts/rwd-fundamentals/#set-the-viewport
       section:
         id: rwd-fundamentals
         title: "Responsive Web design"
         href: layouts/rwd-fundamentals/
     -
-      title: Size content to the viewport
+      title: 调整内容大小以适应视口
       href: layouts/rwd-fundamentals/#size-content-to-the-viewport
       section:
         id: rwd-fundamentals
@@ -30,21 +30,21 @@ related-guides:
         href: layouts/rwd-fundamentals/
   first-break-point:
     -
-      title: Using Media Queries
+      title: 使用“媒介查询”
       href: layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness
       section:
         id: rwd-fundamentals
         title: "Responsive Web design"
         href: layouts/rwd-fundamentals/
     -
-      title: Layout patterns
+      title: 布局模式
       href: layouts/rwd-patterns/
       section:
         id: rwd-patterns
         title: "Layout Pattens"
         href: layouts/rwd-patterns/
     -
-      title: Mostly Fluid layout
+      title: 主要的流式布局
       href: layouts/rwd-patterns/#mostly-fluid
       section:
         id: rwd-patterns
@@ -52,14 +52,14 @@ related-guides:
         href: layouts/rwd-patterns/
   images:
     -
-      title: "Enhance imgs with srcset for high DPI devices"
+      title: "针对高保真dpi设备，使用srcset属性来增强图片效果"
       href: media/images/images-in-markup.html#enhance-imgs-with-srcset-for-high-dpi-devices
       section:
         id: images
         title: "Images"
         href: media/images/
     - 
-      title: "Use media queries to provide high res images or art direction"
+      title: "使用媒介查询，以提供高分辨率的图片或艺术设计"
       href: media/images/images-in-css.html#use-media-queries-for-conditional-image-loading-or-art-direction
       section:
         id: images
@@ -70,7 +70,7 @@ notes:
   styling:
     - We have assumed a set of styles that include color, padding and font styling that match our brand guidelines.
   not-all-at-once:
-    - You don't have to move all the elements at once, you can make smaller adjustments if needed.
+    - 无须马上调整所有元素，必要时进行微调。
 article:
   written_on: 2014-04-17
   updated_on: 2014-04-23
@@ -83,66 +83,48 @@ id: multi-screen-responsive
 
 {% include modules/toc.liquid %}
 
-We are building a site that works across multiple screen sizes and device
-types. In the [previous
-article]({{site.baseurl}}{{page.article.previous.url}}), we crafted the
-Information Architecture of the page and created a basic structure.
-In this guide, we will take our basic structure with content and turn it into
-a beautiful page that is responsive across a large number of screen sizes.
+我们着手建立一个网站，可以运行于多尺寸屏幕、不同类型设备上。在[前一篇文章]({{site.baseurl}}{{page.article.previous.url}})中，我们精心构建了网页的信息架构，创建了一个基本结构。在本指南中，我们将结合基本结构与内容，把它制作成一个漂亮的网页，可自适应不同的屏幕尺寸。
 
 <div class="clear">
   <figure class="g-wide--2 g-medium--half">
     <img  src="images/content.png" alt="Content" style="max-width: 100%;">
-    <figcaption>{% link_sample _code/content-without-styles.html %} Content and structure {% endlink_sample %} </figcaption>
+    <figcaption>{% link_sample _code/content-without-styles.html %} 内容和结构 {% endlink_sample %} </figcaption>
   </figure>
   <figure class="g-wide--2 g-wide--last g-medium--half g--last">
     <img  src="images/narrowsite.png" alt="Designed site" style="max-width: 100%;">
-    <figcaption>{% link_sample _code/content-with-styles.html %} Final site {% endlink_sample %} </figcaption>
+    <figcaption>{% link_sample _code/content-with-styles.html %} 最终网站 {% endlink_sample %} </figcaption>
   </figure>
 </div>
 
-Following the principles of Mobile First web development,
-we start with a narrow viewport &mdash; similar to a mobile phone &mdash;
-and build for that experience first.
-Then we scale up to larger device classes.
-We can do this by making our viewport wider and
-making a judgment call on whether the design and layout look right.
+根据“移动优先”（Mobile First）的web开发原则，我们从窄视口开始 &mdash; 类似于手机 &mdash; 并首先形成经验。然后，我们扩展至更大的设备类。我们可以使视图变得更宽，判断设计、布局是否合适。
 
-Earlier we created a couple of different high-level designs for how our content
-should be displayed. Now we need make our page adapt to those different layouts.
-We do this by making a decision on where to place our breakpoints &mdash; a point
-where the layout and styles change &mdash; based on how the content fits the
-screen-size.
+早些时候，我们创建几个不同的高层次设计，解决如何显示我们的内容。现在，我们需要让页面适应这些不同的布局。我们是这样做的：基于内容适应屏幕大小，决定临界点的位置 &mdash; 布局和样式发生改变的一个值点。
 
 {% include modules/takeaway.liquid list=page.key-takeaways.make-responsive %}
 
-## Add a viewport
+## 添加一个视口
 
-Even for a basic page, you **must** always include a viewport meta tag.
-The viewport is the most critical component you need for building multi-device experiences.
-Without it, your site will not work well on a mobile device.
+即使对于一个基本页面，你必须始终包含一个viewport 元数据标签。视口是建立多屏体验的最重要的组成部分。没有它，你的网站将无法良好运行于移动设备上。
 
-The viewport indicates to the browser that the page needs to be scaled to fit
-the screen.  There are many different configurations that you can specify for
-your viewport to control the display of the page.  As a default, we recommend:
+视口用于提示浏览器：网页页面需要进行调整以适应屏幕范围。你可以为视口指定多种配置，以控制页面的显示。我们推荐一个默认值：
 
 {% include_code _code/viewport.html viewport %}
 
-The viewport lives in the head of the document and only needs to be declared once.
+视口元素位于文档头部，仅需声明一次。
 
 {% include modules/related_guides.liquid inline=true list=page.related-guides.responsive %}
 
-## Apply simple styling
+## 使用简单的样式
 
 Our product and company already has a very specific branding and font guide-lines supplied
 in a style guide.
+我们产品和公司信息根据样式指南提供了一个非常具体的品牌、字体指导方针。
 
-### Style guide
+### 样式指南
 
-A style guide is a useful way to get a high-level understanding of the visual representation
-of the page and it helps you ensure that you are consistent throughout the design.
+样式指南是深入认识页面的可视化表达的有效途径。它有助于确保设计首尾风格一致。
 
-#### Colors
+#### 颜色
 
 <div class="styles" style="font-family: monospace;">
   <div style="background-color: #39b1a4">#39b1a4</div>
@@ -153,22 +135,17 @@ of the page and it helps you ensure that you are consistent throughout the desig
   <div style="background-color: #dc4d38">#dc4d38</div>
 </div>
 
-### Add stylistic images
+### 添加样式化图片
 
-In the previous guide, we added images called "content images".  These were
-images that were important to the narrative of our product.  Stylistic images
-are images that are not needed as part of the core content but add visual flare
-or help guide the user's attention to a specific piece of content.
+在前篇指南中，我们添加了所谓的“内容图片”。这些图片对于描述我们产品很重要。样式图片不是核心内容的一部分，但增添了视觉冲击力，或引导用户注意力至特定内容。
 
-A good example of this is a headline image for the 'above the fold' content.  It
-is often used to entice the user to read more about the product.
+这方面的一个很好的例子是：顶部内容的标题图片。它经常被用来吸引用户阅读更多的产品。
 
 <div class="g-wide--2 g-wide--last g-medium--half g--last">
   <img  src="images/narrowsite.png" alt="Designed site" style="max-width: 100%;">
 </div>
 
-They can be very simple to include. In our case, it will be the background to the
-header and we will apply it via some simple CSS.
+它们可以非常简单地包含进来。在我们的例子中，样式图片为背景，应用简单的css即可。
 
 {% highlight css %}
 #headline {
@@ -180,17 +157,13 @@ header and we will apply it via some simple CSS.
 }
 {% endhighlight %}
 
-We have chosen a simple background image that is blurred so it doesn't take away
-from the content and we have set it to `cover` the entire element; that way it
-always stretches whilst maintaining the correct aspect ratio.
+我们选择了一张模糊的简单背景图片，因此并不会影响网页内容。我们将它设置为`cover`，并总是以拉伸同时保持正确纵横比的方式来遍布整个元素。
 
 <br style="clear: both;">
 
-## Set your first breakpoint
+## 设置首个临界点
 
-The design starts to look bad at about 600px wide.  In our case, the length of
-the line is going above 10 words (the optimal reading length) and that is
-where we want to change it.
+当宽度大约为600px时，设计开始变得糟糕。在我们的例子中，行的长度会超过10个字（最佳的阅读长度），而这正是我们需要调整的地方。
 
 <video controls poster="images/firstbreakpoint.png" style="width: 100%;">
   <source src="videos/firstbreakpoint.mov" type="video/mov"></source>
@@ -200,9 +173,7 @@ where we want to change it.
   </p>
 </video>
 
-600px appears to be a good place to create our first breakpoint as it will give us scope
-to reposition elements to make them fit the screen better.  We can do this
-using a technology called [Media Queries]({{site.baseurl}}/layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness).
+6600px似乎是我们创建第一个临界点的良好位置，因为它确定了范围，重新定位元素，使之更好地适应屏幕。我们使用一种称为[媒介查询（Media Queries）]({{site.baseurl}}/layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness)的技术，可做到这一点。
 
 {% highlight css %}
 @media (min-width: 600px) {
@@ -210,39 +181,29 @@ using a technology called [Media Queries]({{site.baseurl}}/layouts/rwd-fundament
 }
 {% endhighlight %}
 
-There is more space on a larger screen so there is more flexibility with how
-content can be displayed.
+更大的屏幕意味着拥有更多的空间，因此，在如何显示内容的问题上具有更强的灵活性。
 
 {% include modules/remember.liquid title="Note" list=page.notes.not-all-at-once %}
 
-In the context of our product page, it looks like we will
-need to:
+从当前我们产品页面的效果看来，接下来我们需要：
 
-*  Constrain the maximum width of the design.
-*  Alter the padding of elements and reduce the text size.
-*  Move the form to float in-line with the heading content.
-*  Make the video float around the content.
-*  Reduce the size of the images and have them appear in a nicer grid.
+*  约束设计的最大宽度
+*  修改元素内边距和减少文本尺寸
+*  移动表单，与标题内容浮动对齐
+*  确保视频浮动于内容周围
+*  减少图像尺寸，显示于更合适的网格
 
 {% include modules/related_guides.liquid inline=true list=page.related-guides.first-break-point %}
 
-## Constrain the maximum width of the design
+## 限制设计界面的最大宽度
 
-We have chosen to have only two major layouts: a narrow viewport and a wide
-viewport, which greatly simplifies our build process.
+我们仅选择两大布局：窄视口和宽视口：这大大简化了构建过程。
 
-We have also decided to create full-bleed sections on the narrow viewport that
-stay full-bleed on the wide viewport.  This means we should constrain the
-maximum width of the screen so that the text and paragraphs don't extend into one
-long, single line on ultra-wide screens.  We have chosen this point to be
-about 800px.
+我们决定，在窄视口中创建全幅部分，并且在宽视口中仍保持全幅。这意味着我们应限制屏幕的最大宽度，使得文本、段落不延伸成一长单行，出现超宽屏幕。我们选择800px作为最大值。
 
-To achieve this, we need to constrain the width and center the elements.  We
-need  to create a container around each major section and apply a `margin:
-auto`.  This will allow the screen to grow but the content remain centered
-and at a maximum size of 800px.
+为了实现这个目标，我们需要限制宽度，并将元素置于中心。在每个主要区域中，我们需要创建一个容器，将其外边距（margin）设为auto。这允许屏幕增大，但内容仍处于中心，最大尺寸为800px。
 
-The container will be a simple `div` in the following form:
+如下所示，容器是一个简单的`div`：
 
 {% highlight html %}<div class="container">...</div>{% endhighlight %}
 
@@ -250,44 +211,32 @@ The container will be a simple `div` in the following form:
 
 {% include_code _code/fixingfirstbreakpoint.html container css %}
 
-## Alter the padding and reduce text size
+## 改变内边距和减少文本尺寸
 
-On the narrow viewport, we don't have a lot of space to display content so
-the size and weight of the typography is often drastically reduced to fit the
-screen.
+在窄视口中，我们没有大量空间来显示内容。因此，排版尺寸和磅值往往需大幅减少，以适应屏幕。
 
-With a larger viewport, we need to consider that the user is more likely to be
-on a larger screen but further away.  To increase the readability of the
-content, we can increase the size and weight of the typography and we can also
-alter the padding to make distinct areas stand out more.
+在更宽视口中，我们需要考虑用户倾向于更大的屏幕，甚至更大。为了增加内容的可读性，我们可以增加排版的尺寸和磅值，也可以改变内边距，以使不同区域更加明显。
 
-In our product page, we will increase the padding of the section elements by
-setting it to remain at 5% of the width.  We will also increase the size of
-the headers for each of the sections.
+在我们产品页面中，我们通过设置宽度方向的内边距为5%，以增加区域元素的内边距。我们也将增加每个部分顶部的大小。
 
 {% include_code _code/fixingfirstbreakpoint.html padding css %}
 
-## Adapt elements to wide viewport
+## 调整元素以适应宽视口
 
-Our narrow viewport was a stacked linear display.  Each major section and the content
-inside them was displayed in order from top to bottom.
+窄视口以线性方式堆叠显示。每个主要区域及其里面的内容是依次从上到下排列。
 
-A wide viewport gives us extra space to use to display the content in an optimal way
-for that screen.  For our product page, this means that according to our IA we can:
+宽视口提供了额外的空间，使得内容能以最佳方式呈现在屏幕上。对于我们的产品页面，根据信息架构，意味着我们可以：
 
-*  Move the form around the header information.
-*  Position the video to the right of the key points.
-*  Tile the images.
-*  Expand the table.
+*  移动表单，贴近头标题信息
+*  将视频放在重要功能列表右边
+*  平铺图像
+*  展开表格
 
-### Float the Form element
+### 使表单元素浮动
 
-The narrow viewport means that we have a lot less horizontal space available for
-us to comfortably position elements on the screen.
+窄视口意味着拥有较少的横向空间，不能充裕地放置屏幕上的元素。
 
-To make more effective use of the horizontal screen space, we need to break out
-of the  the linear flow of the header and move the form and list to be next
-to each other.
+为了更有效地利用屏幕的横向空间，我们需要打破顶部的线性流式布局，移动表单和表项，使得彼此紧邻。
 
 {% include_code _code/fixingfirstbreakpoint.html formfloat css %}
 
@@ -301,45 +250,31 @@ to each other.
   </p>
 </video>
 
-### Float the Video element
+### 使视频元素浮动
 
-The video in the narrow viewport interface is designed  to be the full width of
-the screen and positioned after the list of key features. On a wide viewport,
-the video will scale up to be too large and look incorrect when placed next
-to our list of features.
+在窄视口中，将视频设计为占屏幕的整个宽度，放置在重要功能列表后面。在宽视口中，当视屏位于功能列表后面时，视频变得太大，看起来不合适。
 
-The video element needs to be moved out of the vertical flow of the narrow
-viewport and should be displayed side-by-side with the bulleted list of content.
+视频元素需移出窄视口的垂直流式布局，应与内容的项目符号列表并列显示。
 
 {% include_code _code/fixingfirstbreakpoint.html floatvideo css %}
 
-### Tile the Images
+### 平铺图片
 
-The images in the narrow viewport (mobile devices mostly) interface are set to
-be  the full width of the screen and stacked vertically.  This doesn't scale
-well on a wide viewport.
+在窄视口（大部分移动设备）接口中，图像设置为屏幕的整个宽度、垂直堆叠。这在宽视口中得不到很好地扩展。
 
-To make the images look correct on a wide viewport, they are scaled to 30%
-of the container width and laid out horizontally (rather than vertically in
-the narrow view). We will also add some border radius and box-shadow to make
-the images look more appealing.
+为了使图片在宽视口中看起来合适，将图片宽度缩放容器的30%，水平放置（而不是窄视口的垂直放置）。我们还将增加边框半径和盒子阴影（box-shadow），使图像看起来更吸引人。
 
 <img src="images/imageswide.png" style="width:100%">
 
 {% include_code _code/fixingfirstbreakpoint.html tileimages css %}
 
-### Make images responsive to DPI
+### 让图片自适应DPI
 
-When using images,
-take the size of the viewport and the density of the display into consideration.
+使用图片时，要考虑视口大小、显示分辨率。
 
-The web was built for 96dpi screens.  With the introduction of mobile devices,
-we have seen a huge increase in the pixel density of screens not to mention
-Retina class displays on laptops.  As such, images that are encoded to 96dpi
-often look terrible on a hi-dpi device.
+在过去，网页专为96dpi屏幕而设计。随着移动设备的出现，我们已见证了屏幕像素密度的逐渐增大，更别说笔记本电脑的Retina显示屏了。因此，被编码为96dpi的图像，往往在高保真dpi设备上看起来很糟糕。
 
-We have a solution that is not widely adopted yet.
-For browsers that support it, you can display a high density image on a high density display.
+我们有一个还没被广泛采用的解决方案。对于支持该方案的浏览器，你可以在高分辨显示器上显示高像素的图像。
 
 {% highlight html %}
 <img src="photo.png" srcset="photo@2x.png 2x">
@@ -347,13 +282,11 @@ For browsers that support it, you can display a high density image on a high den
 
 {% include modules/related_guides.liquid inline=true list=page.related-guides.images %}
 
-### Tables
+### 表格
 
-Tables are very hard to get right on devices that have a narrow viewport and need
-special consideration.
+表格很难合适地展示在窄视口的设备上，需要特殊考虑。
 
-We recommend on a narrow viewport that you make your table into two rows,
-transposing the heading and cells in a row to make the columnar.
+在窄视口中，我们建议将表分成两排，把标题和表格单元调到一排，呈列状。
 
 <video controls poster="images/responsivetable.png" style="width: 100%;">
   <source src="videos/responsivetable.mov" type="video/mov"></source>
@@ -363,28 +296,21 @@ transposing the heading and cells in a row to make the columnar.
   </p>
 </video>
 
-In our site,
-we had to create an extra breakpoint just for the table content.
-When you build for a mobile device first, it is harder to undo applied styles,
-so we must section off the narrow viewport table CSS from the wide viewport css.
-This gives us a clear and consistent break.
+在我们的网站中，必须单独为表格内容创建一个额外的临界点。由于最初是为移动设备构造网页，去掉已应用的样式是困难的，所以我们必须在宽视口css中关闭窄视口下表格的部分css。这向我们呈现了一个明确、连贯变化。
 
 {% include_code _code/content-with-styles.html table-css css %}
 
-## Wrapping up
+## 结束语
 
-**CONGRATULATIONS.** By the time you read this, you will have created your
-first simple product landing page that works across a large range of devices,
-form-factors, and screen sizes.
+**祝贺你**。当你阅读至此，你可创建你第一个产品的简单登陆页面，可跨大量不同设备、不同比例的表单、以及不同屏幕尺寸。
 
-If you follow these guidelines, you will be off to a good start:
+如果你遵循这些原则，你将有一个良好的开端：
 
-1.  Create a basic IA and understand your content before you code.
-2.  Always set a viewport.
-3.  Create your base experience around mobile-first approach.
-4.  Once you have your mobile experience, increase the width of the display
-   until it doesn't look right and set your breakpoint there.
-5.  Keep iterating.
+1.  写代码之前，创建一个基本的信息架构和清楚需要的内容
+2.  总是设置一个视口
+3.  移动优先，形成基本的经验
+4.  一旦拥有移动经验，增加显示器的宽度，直到网页看起来不合适，并在此设置临界点
+5.  不断迭代
 
 {% include modules/nextarticle.liquid %}
 

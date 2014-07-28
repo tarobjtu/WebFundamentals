@@ -1,12 +1,9 @@
 ---
 layout: article
-title: "Use CSS media queries for responsiveness"
+title: "用CSS媒体查询实现响应式"
 description: "Much of the web isn't optimized for those multi-device experiences. Learn the
              fundamentals to get your site working on mobile, desktop or anything else with a screen."
-introduction: "Media queries are simple filters that can be applied to CSS styles.  They make
-  it easy to change styles based on the characteristics of the device rendering
-  the content, including the display type, width, height, orientation and even
-  resolution."
+introduction: "媒体查询（Media queries）是一种可以应用在CSS样式上的简易过滤器，它可以根据设备的渲染特性（包括显示类型、宽度、高度、转向甚至是分辨率）来显示不同的样式。"
 article:
   written_on: 2014-04-30
   updated_on: 2014-04-30
@@ -26,9 +23,9 @@ key-takeaways:
     - Content should not rely on a particular viewport width to render well.
     - Use CSS media queries to apply different styling for small and large screens.
   media-queries:
-    - Media queries can be used to apply styles based on device characteristics.
-    - Use <code>min-width</code> over <code>min-device-width</code> to ensure the broadest experience.
-    - Use relative sizes for elements to avoid breaking layout.
+    - 媒体查询可以根据设备特性应用不同的样式。
+    - 使用<code>min-width</code>确保最大的体验程度。
+    - 对元素使用相对大小，防止布局被破坏。
   choose-breakpoints:
     - Create breakpoints based on content, never on specific devices, products or brands.
     - Design for the smallest mobile device first, then progressively enhance the experience as more screen real estate becomes available.
@@ -64,17 +61,13 @@ remember:
 {% include modules/takeaway.liquid list=page.key-takeaways.media-queries %}
 
 
-For example, you could place all styles necessary for printing
-inside a print media query:
+举个例子，你可以把所有需要应用的打印上的样式放入打印媒体查询中：
 
 {% highlight html %}
 <link rel="stylesheet" href="print.css" media="print">
 {% endhighlight %}
 
-In addition to using the `media` attribute in the stylesheet link, there are two
-other ways to apply media queries that can be embedded in a CSS file: `@media`
-and `@import`.  For performance reasons, either of the first two methods are
-recommended over the `@import` syntax.
+除了在样式表的链接上使用`media`属性，还有另外两种方式可以实现媒体查询：在CSS文件中添加`@media`和`@import`。出于性能的考虑，前两个方法都比使用`@import`要好。
 
 {% highlight css %}
 @media print {
@@ -84,16 +77,11 @@ recommended over the `@import` syntax.
 @import url(print.css) print;
 {% endhighlight %}
 
-The logic that applies to media queries is not mutually exclusive and any filter
-that meets that criteria the resulting CSS block will be applied using the
-standard rules of precedence in CSS.
+媒体查询使用的逻辑不是互斥的，如果过滤器发现符合了某一标准，那么利用CSS的优先级规则使得对应的样式可以生效。
 
-## Apply media queries based on viewport size
+## 根据视口大小使用媒体查询
 
-Media queries enable us to create a responsive experience, where specific styles
-are applied to small screens, large screens and anywhere in between.  The media
-query syntax allows for the creation of rules that can be applied depending on
-device characteristics.
+媒体查询使得响应式的体验得以实现：根据屏幕尺寸的不同，特定的样式得以应用。有了媒体查询语句，就可以根据设备的不同特性应用不同的样式了。
 
 {% highlight css %}
 @media (query) {
@@ -101,9 +89,7 @@ device characteristics.
 }
 {% endhighlight %}
 
-While there are several different items we can query on, the ones used most
-often for responsive web design are `min-width`, `max-width`, `min-height` and
-`max-height`.
+虽然有很多设备属性都可以作为查询依赖的条件，不过最经常使用的还是`min-width`、`max-width`、 `min-height`和`max-height`。
 
 
 <table class="table-2">
@@ -113,39 +99,39 @@ often for responsive web design are `min-width`, `max-width`, `min-height` and
   </colgroup>
   <thead>
     <tr>
-      <th data-th="attribute">attribute</th>
-      <th data-th="Result">Result</th>
+      <th data-th="attribute">属性</th>
+      <th data-th="Result">结果</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="attribute"><code>min-width</code></td>
-      <td data-th="Result">Rules applied for any browser width over the value defined in the query.</td>
+      <td data-th="Result">浏览器宽度超过某个值的时候，定义在查询中的样式就会生效。</td>
     </tr>
     <tr>
       <td data-th="attribute"><code>max-width</code></td>
-      <td data-th="Result">Rules applied for any browser width under the value defined in the query.</td>
+      <td data-th="Result">浏览器宽度小于等于某个值的时候，定义在查询中的样式会生效。</td>
     </tr>
     <tr>
       <td data-th="attribute"><code>min-height</code></td>
-      <td data-th="Result">Rules applied for any browser height over the value defined in the query.</td>
+      <td data-th="Result">浏览器高度超过某个值的时候，定义在查询中的样式会生效。</td>
     </tr>
     <tr>
       <td data-th="attribute"><code>max-height</code></td>
-      <td data-th="Result">Rules applied for any browser height under the value defined in the query.</td>
+      <td data-th="Result">浏览器高度小于等于某个值的时候，定义在查询中的样式会生效。</td>
     </tr>
     <tr>
       <td data-th="attribute"><code>orientation=portrait</code></td>
-      <td data-th="Result">Rules applied for any browser where the height is greater than or equal to the width.</td>
+      <td data-th="Result">当浏览器高度大于等于宽度的时候，样式将会生效。</td>
     </tr>
     <tr>
       <td data-th="attribute"><code>orientation=landscape</code></td>
-      <td data-th="Result">Rules for any browser where the width is greater than the height.</td>
+      <td data-th="Result">当浏览器宽度大于等于高度的时候，样式将会生效。</td>
     </tr>
   </tbody>
 </table>
 
-Let's take a look an example:
+来看看下面这个例子：
 
 <figure>
   {% link_sample _code/media-queries.html %}
@@ -155,17 +141,16 @@ Let's take a look an example:
 
 {% include_code _code/media-queries.html mqueries %}
 
-* When the browser is between <b>0px</b> and <b>640px</b> wide, `max-640px.css` will be applied.
-* When the browser is between <b>500px</b> and <b>600px</b> wide, styles within the `@media` will be applied.
-* When the browser is <b>640px or wider</b>, `min-640px.css` will be applied.
-* When the browser <b>width is greater than the height</b>, `landscape.css` will be applied.
-* When the browser <b>height is greater than the width</b>, `portrait.css` will be applied.
+* 当浏览器宽度在<b>0px</b>到<b>640px</b>之间，`max-640px.css`就会生效。
+* 当浏览器宽度在<b>500px</b>到<b>600px</b>之间，在`@media`中定义的样式会生效。
+* 如果浏览器是在<b>640px</b>或者以上的，`min-640px.css`会生效。
+* 如果浏览器的<b>宽度大于高度</b>，`landscape.css`就会生效。
+* 如果浏览器的<b>高度大于宽度</b>，portrait.css就会生效。
 
 
-## A note on `min-device-width`
+## `min-device-width`的说明
 
-It is also possible to create queries based on
-`*-device-width`; though this practice is **strongly discouraged**. 
+还可以根据 `*-device-width`来设置查询条件，但是**非常不鼓励**使用这种方式。 
 
 The difference is subtle but very important: `min-width` is based on the 
 size of the browser window, whereas `min-device-width` is based on

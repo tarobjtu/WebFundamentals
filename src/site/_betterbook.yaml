@@ -2,13 +2,13 @@ toc:
 - title: "Web <strong>Fundamentals</strong>"
   path: /
   home: true
-- title: "Get Started"
+- title: "开始"
   path: /getting-started/your-first-multi-screen-site/
-- title: "Documentation"
+- title: "文档"
   path: /#documentation
   hasSubNav: true
   section:
-    - title: "Multi-Device Layouts"
+    - title: "多屏布局"
       path: /layouts/
       id: "multi-device-layouts"
       section:
@@ -20,7 +20,7 @@ toc:
           path: /layouts/layout-patterns/
         - title: "UI Elements"
           path: /layouts/ui-elements/
-    - title: "Forms and User Input"
+    - title: "Forms 和 User Input"
       path: /input/
       id: user-input
       section:
@@ -28,7 +28,7 @@ toc:
         path: /input/touch/
       - title: "Form Input"
         path: /input/form/
-    - title: "Images, Video and Audio"
+    - title: "Images, Video 和 Audio"
       path: /media/
       id: introduction-to-media
       section:
@@ -46,7 +46,7 @@ toc:
         path: /device-access/user-location
       - title: "Click to call"
         path: /device-access/click-to-call
-    - title: Performance
+    - title: 性能
       path: /performance/
       id: performance
       section:
@@ -60,7 +60,7 @@ toc:
           path: /performance/optimizing-interactivity/
         - title: "Measuring Performance"
           path: /performance/measuring-performance/
-- title: Tools
+- title: 工具
   path: /tools/
 - title: Resources
   path: /resources/

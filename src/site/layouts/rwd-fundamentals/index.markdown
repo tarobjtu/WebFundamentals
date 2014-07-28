@@ -1,6 +1,6 @@
 ---
 layout: section
-title: "Responsive Web Design Basics"
+title: "响应式网页设计基础"
 description: "Much of the web isn't optimized for those multi-device experiences. Learn the
              fundamentals to get your site working on mobile, desktop or anything else with a screen."
 introduction: "The use of mobile devices to surf the web is growing at an astronomical pace,
@@ -19,14 +19,14 @@ collection: multi-device-layouts
 
 key-takeaways:
   set-viewport:
-    - Use meta viewport tag to control the width and scaling of the browsers viewport.
-    - Include <code>width=device-width</code> to match the screen's width in device independent pixels.
-    - Include <code>initial-scale=1</code> to establish a 1:1 relationship between CSS pixels and device independent pixels.
-    - Ensure your page is accessible by not disabling user scaling.
+    - 用meta视口标签来控制浏览器视口的宽度和缩放程度。
+    - 添加 <code>width=device-width</code> 来适应不同的密度无关像素(device independent pixels)时屏幕的宽度。
+    - 添加 <code>initial-scale=1</code>，使得CSS中的像素和密度无关像素的对应关系是1:1的。
+    - 如果用户不能缩放页面的话，要确保你的页面还是可用的。
   size-content-to-vp:
-    - Do not use large fixed width elements.
-    - Content should not rely on a particular viewport width to render well.
-    - Use CSS media queries to apply different styling for small and large screens.
+    - 如果要在元素上使用固定宽度，数值不能太大。
+    - 不能以某一个特定的视口尺寸作为内容的渲染标准。
+    - 用CSS媒体查询来定义不同尺寸的屏幕所需要的不同的样式。
   media-queries:
     - Media queries can be used to apply styles based on device characteristics.
     - Use <code>min-width</code> over <code>min-device-width</code> to ensure the broadest experience.
@@ -64,10 +64,7 @@ remember:
   <iframe src="https://www.youtube.com/embed/oK09n_PGhTo?controls=2&modestbranding=1&showinfo=0&utm-source=crdev-wf" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-There is a multitude of different screen sizes across phones, "phablets",
-tablets, desktops, game consoles, TVs, even wearables.  Screen sizes will always
-be changing, so it's important that your site can adapt to any screen size,
-today or in the future.
+平板手机、平板、桌面电脑、游戏机、电视还有可穿戴设备……现在各种各样的设备导致了屏幕尺寸也是五花八门。而且在未来，屏幕的尺寸也会越来越不同，为了跟上这趋势，你的站点应该要尽量去适应各种屏幕尺寸才行。
 
 {% link_sample _code/weather.html %}
   <video autoplay loop controls class="responsiveVideo">
@@ -76,12 +73,7 @@ today or in the future.
   </video>
 {% endlink_sample %}
 
-Responsive web design, originally defined by [Ethan Marcotte in A List
-Apart](http://alistapart.com/article/responsive-web-design/) responds to the
-needs of the users and the devices they're using.  The layout changes based on
-the size and capabilities of the device.  For example, on a phone, users would
-see content shown in a single column view; a tablet might show the same content
-in two columns.
+Ethan Marcotte 最先在[A List Apart](http://alistapart.com/article/responsive-web-design/)中定义了响应式网页设计：网页可以根据用户正在使用的设备来做出响应，布局的更改是基于设备的大小和容量。举例来说，在一部手机上，用户会看到一栏的内容；在平板上，可能内容还是相同的，但是是分两栏呈现的。
 
 {% include modules/nextarticle.liquid %}
 
