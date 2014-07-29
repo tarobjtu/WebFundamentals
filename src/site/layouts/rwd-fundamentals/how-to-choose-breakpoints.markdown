@@ -65,10 +65,7 @@ remember:
 
 ## Pick major breakpoints by starting small, then working up
 
-Design the content to fit on a small screen size first, then expand the screen
-until a breakpoint becomes necessary.  This will allow you to optimize
-breakpoints based on content and maintain the fewest number of breakpoints
-possible.
+当布局需要有很大改动的时候视图也会大换血，不过当你需要一些小改动的时候，视图也能提供帮助。比如在两个主要视图之间，你可以更改某个元素margin或者padding值，或者增加字号可以使布局显得更自然一些。现在从小屏幕上的布局开始优化天气预报的页面。当视口宽度大于360px的时候要增加字号；接下来，如果有足够空间的话，可以把最高温和最低温分开来，这样他们就能在同一条线上，而不是竖着排列。这样还能用更大的图标来显示天气状况。
 
 Let's work through the example we saw at the beginning, the weather forecast.
 The first step is to make the forecast look good on a small screen.

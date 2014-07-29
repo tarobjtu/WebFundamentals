@@ -2,9 +2,9 @@ toc:
 - title: "Web <strong>Fundamentals</strong>"
   path: /
   home: true
-- title: "开始"
+- title: "Get Started"
   path: /getting-started/your-first-multi-screen-site/
-- title: "文档"
+- title: "documentation"
   path: /#documentation
   hasSubNav: true
   section:
@@ -60,7 +60,7 @@ toc:
           path: /performance/optimizing-interactivity/
         - title: "Measuring Performance"
           path: /performance/measuring-performance/
-- title: 工具
+- title: Tools
   path: /tools/
 - title: Resources
   path: /resources/
