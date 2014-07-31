@@ -4,11 +4,11 @@ toc:
   home: true
 - title: "Get Started"
   path: /getting-started/your-first-multi-screen-site/
-- title: "documentation"
+- title: "Documentation"
   path: /#documentation
   hasSubNav: true
   section:
-    - title: "多屏布局"
+    - title: "跨终端布局"
       path: /layouts/
       id: "multi-device-layouts"
       section:
