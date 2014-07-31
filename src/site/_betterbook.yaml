@@ -28,7 +28,7 @@ toc:
         path: /input/touch/
       - title: "Form Input"
         path: /input/form/
-    - title: "Images, Video 和 Audio"
+    - title: "图片、音频与视频"
       path: /media/
       id: introduction-to-media
       section:
