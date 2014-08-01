@@ -38,7 +38,7 @@ toc:
         path: /media/video/
       - title: "Audio"
         path: /media/audio/
-    - title: "Device Access"
+    - title: "设备访问"
       path: /device-access/
       id: device-access
       section:
