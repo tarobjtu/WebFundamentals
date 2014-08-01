@@ -1,11 +1,11 @@
 ---
 layout: article
-title: "Size videos correctly"
-description: "When it comes to keeping your users happy, size matters."
-introduction: "When it comes to keeping your users happy, size matters:"
+title: "正确调整视频大小"
+description: " 当关系到保持用户愉悦度时，视频大小就显得尤为重要了。"
+introduction: "当关系到保持用户愉悦度时，视频大小就显得尤为重要了。"
 article:
   written_on: 2014-04-16
-  updated_on: 2014-04-29
+  updated_on: 2014-08-01
   order: 3
 collection: videos
 key-takeaways:
@@ -19,8 +19,7 @@ remember:
     - The Media Fragments API is supported on most platforms, but not on iOS.
     - Make sure Range Requests are supported by your server. Range Requests are enabled by default on most servers, but some hosting services may turn them off.
   dont-overflow:
-    - Don't force element sizing that results in an aspect ratio different from the original
-      video. Squashed or stretched looks bad.
+    - 不要强行改变视频的宽高比。压扁或者拉伸都会很难看。
   accessibility-matters:
     - The track element is supported on Chrome for Android, iOS Safari, and all current browsers on desktop except Firefox (see <a href="http://caniuse.com/track" title="Track element support status">caniuse.com/track</a>). There are several polyfills available too. We recommend <a href='//www.delphiki.com/html5/playr/' title='Playr track element polyfill'>Playr</a> or <a href='//captionatorjs.com/' title='Captionator track'>Captionator</a>.
   construct-video-streams:
@@ -48,47 +47,36 @@ remember:
 
 </style>
 
-When it comes to keeping your users happy, size matters:
+当关系到保持用户愉悦度时，视频大小就显得尤为重要了。
 
-* Don't serve videos with a larger frame size or higher quality than the
-  platform can handle.
-* Don't make your videos any longer than they need be.
-* Long videos can cause hiccups with download and seeking; some browsers may
-  have to wait until the video downloads before beginning playback.
+* 使用大尺寸和高质量视频时注意不要超出平台的承受范围。
+* 视频应尽可能的短。
+* 过长的视频可能会引起下载和加载的中断；有的浏览器会等待视频下载完才开始播放。
 
-## Check video size
 
-The actual video frame size as encoded may be different from the video
-element dimensions (just as an image may not be displayed using its actual
-dimensions).
+## 检测视频的大小
 
-To check the encoded size of a video, use the video element `videoWidth`
-and `videoHeight` properties. `width` and `height` return the dimensions of
-the video element, which may have been sized using CSS or inline width and
-height attributes.
+视频真正的编码帧大小有可能与视频元素的大小不一样（就像图片不一定按照它本身的大小显示）。
 
-## Ensure videos don't overflow containers
+要检测视频编码的大小，可以用视频元素的 `videoWidth` 和 `videoHeight` 属性。而 `width` 和 `height` 则返回视频元素的大小，这两个值可能已被 CSS 或内联 width 和 height 属性修改了。
 
-When video elements are too big for the viewport, they may overflow their
-container, making it impossible for the user to see the content or use
-the controls.
+
+## 保证视频不会溢出容器
+
+当视频元素大小超过窗口时就有可能会溢出容器，此时用户将无法看到完整的内容或使用上面的控件。
 
 <div class="clear">
     <img class="g-wide--1 g-medium--half" alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport" src="images/Chrome-Android-portrait-video-unstyled.png">
     <img class="g-wide--2 g-wide--last g-medium--half g--last" alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport" src="images/Chrome-Android-landscape-video-unstyled.png">
 </div>
 
-You can control video dimensions using JavaScript or CSS. JavaScript libraries
-and plugins such as [FitVids](//fitvidsjs.com/) make it possible to maintain
-appropriate size and aspect ratio, even for Flash videos from YouTube and
-other sources.
+你可以通过 JavaScript 或 CSS 控制视频大小。像 [FitVids](//fitvidsjs.com/) 之类的 JavaScript 库或插件可以方便地保持适当的大小和宽高比，甚至可以用在 YouTube 和其它源的 Flash 视频上。
 
-Use [CSS media queries](../../layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness) to specify the size of elements depending on the viewport dimensions; `max-width: 100%` is your friend.
+使用 [CSS media queries](../../layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness) 媒体查询 (CSS media queries)去指定元素的大小随窗口尺寸变化而变化; `max-width: 100%` 会是你的好朋友。
 
 {% include modules/remember.liquid title="Remember" list=page.remember.dont-overflow %}
 
-For media content in iframes (such as YouTube videos), try a responsive
-approach (like the one [proposed by John Surdakowski](//avexdesigns.com/responsive-youtube-embed/)).
+对于 iframes 中的媒体内容（像 YouTube 视频），可以采用响应式的方法（比如这个 [由 John Surdakowski 提出的](//avexdesigns.com/responsive-youtube-embed/) ）。
 
 **CSS:**
 
@@ -98,7 +86,7 @@ approach (like the one [proposed by John Surdakowski](//avexdesigns.com/responsi
 
 {% include_code _code/responsive_embed.html markup html %}
 
-Compare the {% link_sample _code/responsive_embed.html %}responsive sample{% endlink_sample %} to the {% link_sample _code/unyt.html %}unresponsive version{% endlink_sample %}.
+对比 {% link_sample _code/responsive_embed.html %}响应式样例{% endlink_sample %} 和 {% link_sample _code/unyt.html %}非响应式样例{% endlink_sample %}。
 
 
 {% include modules/nextarticle.liquid %}
