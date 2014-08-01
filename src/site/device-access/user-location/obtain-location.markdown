@@ -1,15 +1,12 @@
 ---
 layout: article
-title: "Obtain the user's current location"
-introduction: "The Geolocation API lets you find out where the user is, 
-  always with the user's consent. This functionality could be used as part 
-  of user queries, e.g. to guide someone to a destination point. It could
-  also be used for 'geo-tagging' some content the user has created, e.g. 
-  to mark where a photo was taken."
-description: "The Geolocation API lets you find out where the user is, always with the user's consent."
+title: "获取用户当前位置"
+introduction: "地理位置（Geolocation）API 能让你在用户允许情况下获取其位置信息。这个功能可以作为用户请求的一部分，
+               比如导航用户到指定位置；也可以为用户生成的内容打上“位置标签”，比如标记照片的拍照位置。"
+description: " 地理位置（Geolocation）API 能让你在用户允许情况下获取其位置信息。"
 article:
   written_on: 2014-06-06
-  updated_on: 2014-06-06
+  updated_on: 2014-08-01
   order: 1
 rel:
   gplusauthor: https://plus.google.com/+PaulKinlan
@@ -17,10 +14,11 @@ rel:
 collection: user-location
 key-takeaways:
   geo: 
-    -  Check for Compatibility before you use the API
-    -  Prefer a coarse location, over a fine location
-    -  Always handle errors
-    -  Don't poll for the data too frequently to save the user's battery
+    -  使用 API 前先检测兼容性
+    -  粗定位比精确定位好
+    -  注意处理错误
+    -  控制获取数据的频率以节省用户电量
+
 
 ---
 
@@ -30,30 +28,22 @@ key-takeaways:
 
 {% include modules/takeaway.liquid list=page.key-takeaways.geo %}
 
-The API is device-agnostic; it doesn't care how the browser determines
-location, so long as clients can request and receive location data in a
-standard way. The underlying mechanism might be via GPS, wifi, or simply
-asking the user to enter their location manually. Since any of these lookups
-is going to take some time, the API is asynchronous; you pass it a callback
-method whenever you request a location.
+这个 API 是设备无关的，它不管浏览器如何检测位置，只要用户能以标准方式请求和接收位置信息即可。底层可能是通过 GPS、wifi 甚至是让用户手动输入地址。这些查找都需要花费一定时间，所以这个 API 是异步的，在请求的时候要传回调函数。
 
-## When to use Geolocation
+## 地理位置的用处
 
-*  Find where the user is closest to a physical location of yours to tailor 
-   the user experience
-*  Tailor information (such as news) to the user's location
-*  Show the position of a user on a map
-*  Tag data created inside your application with the user's location 
-   (i.e, geo-tagging a picture)
+*  为实际物理站点附近的用户提供私人定制的用户体验。
+*  根据用户位置提供定制信息（比如新闻）。
+*  在地图上显示用户位置。
+*  在标签数据中嵌入用户的位置（比如照片的位置信息）。
 
 
-## Check for Compatibility
 
-The geolocation API is now supported in the majority of browsers, but it is
-good practice to always check for support before you do anything.
+## 检查兼容性
 
-You can easily check for compatibility by testing for the presence of the
-geolocation object:
+如今大多数浏览器都支持地理位置 API，但在使用前最好还是检查一下支持。
+
+可以检测 `geolocation` 对象的存在来测试兼容性。:
 
 {% highlight javascript %}
 // check for Geolocation support
@@ -65,11 +55,9 @@ else {
 }
 {% endhighlight %}
 
-## Determine the User's Current Location
+## 检测用户当前位置
 
-The geolocation API offers a simple 'one-shot' method to obtain the user's
-location  `getCurrentPosition()`.  A call to this method will asynchronously
-report on the user's  current location.
+地理位置 API 提供了唯一的 `getCurrentPosition()` 函数来获取用户位置。调用此函数后会异步反馈用户当前的位置。
 
 {% highlight javascript %}
 window.onload = function() {
@@ -83,37 +71,26 @@ window.onload = function() {
 };
 {% endhighlight %}
 
-If this is the first time an application on this domain has requested
-permissions, the browser will typically check for user consent. Depending on
-the browser, there may also be preferences to always allow - or disallow -
-permission lookups, in which case the confirmation process will be bypassed.
+如果这是该域名下的应用第一次请求权限，浏览器一般会要求用户的允许。在一些浏览器上还可能会有“允许”或“不允许”的偏好配置，这时浏览器就会直接绕过用户确定。
 
-Depending on the location device your browser is using, the position object
-might actually contain a lot more than just latitude and longitude, e.g. it
-could include an altitude or a direction.  You can't tell what extra information
-that location system will use until it actually returns the data.
+根据浏览器使用的定位设备，位置对象还可能会包含经纬度以外的信息，比如海拔和方向。只有在定位系统返回数据的时候才能知道其包含的额外信息。
 
-## Testing Geolocation with your site
+## 为网站测试地理位置功能
 
-When working with HTML5 geolocation support in an application, it can be
-useful to debug the output received when using different values for longitude
-and latitude.
+对于使用 HTML5 地理位置支持的应用，可以利用不同的经纬度数值进行调试。
 
-The DevTools support both overriding position values for navigator.geolocation
-and simulating geolocation not being available via the overrides menu.
+Chrome 开发者工具支持重写 navigator.geolocation 位置数值以及模拟重写菜单不支持的地理位置。
 
 <img src="images/emulategeolocation.png">
 
-*  Open up the overrides menu in the DevTools
-*  Check “Override Geolocation” then enter in Lat = 41.4949819 and Lat = -0.1461206
-*  Refresh the page and it will now use your overridden positions for geolocation
+*  打开开发者工具额重写菜单
+*  选择“重写地理位置”（Override Geolocation），然后输入 Lat = 41.4949819（纬度）和 Lon = -0.1461206（经度）
+*  刷新页面应用重写的地理位置
 
-##  Always Handle Errors
 
-Unfortunately, not all location lookups are successful. Perhaps a GPS could
-not be located or the user has suddenly disabled location lookups. A second,
-optional, argument to `getCurrentPosition()` will be called in the event of an
-error, so you can notify the user inside the callback:
+##  注意处理错误
+
+查找位置不一定成功；可能是 GPS 无法定位或者用户突然中止了位置查询。错误事件会调用 `getCurrentPosition()` 的第二个可选的参数，所以你可以在回调函数里告知用户:
 
 {% highlight javascript %}
 window.onload = function() {
@@ -125,25 +102,21 @@ window.onload = function() {
   };
   var geoError = function(position) {
     console.log('Error occurred. Error code: ' + error.code);
-    // error.code can be:
-    //   0: unknown error
-    //   1: permission denied
-    //   2: position unavailable (error response from location provider)
-    //   3: timed out
+    // error.code 可以是:
+    //   0: 未知错误
+    //   1: 权限不足
+    //   2: 位置错误(位置供应商出错)
+    //   3: 超时
   };
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 };
 {% endhighlight %}
 
-## Reduce the need to start-up geo location hardware.
+## 减少启动地理定位的硬件需要
 
-For many use-cases you don't need to use the most up to date location of the user,
-you just need a rough estimate.
+许多情况下我们不需要用户最新的位置，只需一个粗略的估值。
 
-Use the `maximumAge` optional property to tell the browser to use a recently
-obtained geolocation result.  This not only returns quicker if the user has
-requested the data before it also stops the browser from having to start up
-its geolocation hardware interfaces such as Wifi triangulation or the GPS.
+利用 `maximumAge` 可选属性可以告知浏览器使用最近一次获取的位置结果。这不仅在用户已经请求过数据的情况下响应更快，而且不必启动地理位置硬件接口比如 Wifi 三角定位或 GPS。
 
 {% highlight javascript %}
 window.onload = function() {
@@ -159,20 +132,20 @@ window.onload = function() {
   };
   var geoError = function(position) {
     console.log('Error occurred. Error code: ' + error.code);
-    // error.code can be:
-    //   0: unknown error
-    //   1: permission denied
-    //   2: position unavailable (error response from location provider)
-    //   3: timed out
+    // error.code 可以是:
+    //   0: 未知错误
+    //   1: 权限不足
+    //   2: 位置错误(位置供应商出错)
+    //   3: 超时
   };
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 };
 {% endhighlight %}
 
-## Don't keep the user waiting, set a timeout
+## 设置超时以避免用户等待过长
 
-Unless you set a timeout, your request to get the current position might never return.
+没有设置超时的话，位置请求有可能永远都不返回。
 
 {% highlight javascript %}
 window.onload = function() {
@@ -188,26 +161,22 @@ window.onload = function() {
   };
   var geoError = function(error) {
     console.log('Error occurred. Error code: ' + error.code);
-    // error.code can be:
-    //   0: unknown error
-    //   1: permission denied
-    //   2: position unavailable (error response from location provider)
-    //   3: timed out
+    // error.code 可以是:
+    //   0: 未知错误
+    //   1: 权限不足
+    //   2: 位置错误(位置供应商出错)
+    //   3: 超时
   };
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 };
 {% endhighlight %}
 
-## Prefer a coarse location over a fine grained location
+## 粗定位比精确定位好
 
-If you want to find the nearest store to a user it is unlikely that you need
-1 meter precision to  work that out.  The API is designed to give a coarse 
-location that returns as quickly as possible.
+如果你只是需要知道离用户最近的存储点，则没必要获取1米的精度。设置这个 API 是为了尽快获取粗定位。
 
-If you do need high-precision it is possible to override the default setting
-with the `enableHighAccuracy` option.  Use this sparingly: it will be slower
-to resolve and use more battery.
+如果你需要请求高精度，可以重写 `enableHighAccuracy` 的默认设置。请谨慎使用：它会减慢解析速度并消耗更多电量。
 
 {% highlight javascript %}
 window.onload = function() {
@@ -223,11 +192,11 @@ window.onload = function() {
   };
   var geoError = function(error) {
     console.log('Error occurred. Error code: ' + error.code);
-    // error.code can be:
-    //   0: unknown error
-    //   1: permission denied
-    //   2: position unavailable (error response from location provider)
-    //   3: timed out
+    // error.code 可以是:
+    //   0: 未知错误
+    //   1: 权限不足
+    //   2: 位置错误(位置供应商出错)
+    //   3: 超时
   };
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
