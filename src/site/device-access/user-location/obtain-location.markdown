@@ -15,7 +15,7 @@ collection: user-location
 key-takeaways:
   geo: 
     -  使用 API 前先检测兼容性
-    -  粗定位比精确定位好
+    -  粗略定位比精确定位好
     -  注意处理错误
     -  控制获取数据的频率以节省用户电量
 
@@ -43,7 +43,7 @@ key-takeaways:
 
 如今大多数浏览器都支持地理位置 API，但在使用前最好还是检查一下支持。
 
-可以检测 `geolocation` 对象的存在来测试兼容性。:
+可以检测 `geolocation` 对象是否存在来测试兼容性。:
 
 {% highlight javascript %}
 // check for Geolocation support
@@ -172,9 +172,9 @@ window.onload = function() {
 };
 {% endhighlight %}
 
-## 粗定位比精确定位好
+## 粗略定位比精确定位好
 
-如果你只是需要知道离用户最近的存储点，则没必要获取1米的精度。设置这个 API 是为了尽快获取粗定位。
+如果你只是需要知道离用户最近的存储点，则没必要获取1米的精度。设置这个 API 是为了尽快获取粗略定位。
 
 如果你需要请求高精度，可以重写 `enableHighAccuracy` 的默认设置。请谨慎使用：它会减慢解析速度并消耗更多电量。
 
