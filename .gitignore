@@ -6,3 +6,11 @@ node_modules/
 appengine/build
 src/Gemfile.lock
 src/site/icons
+
+*.eot
+
+src/site/icons/icons.eot
+
+src/site/icons/icons.ttf
+
+src/site/icons/icons.woff
