@@ -1,15 +1,11 @@
 ---
 layout: article
-title: "Provide alternatives for legacy platforms"
-description: "Not all video formats are supported on all platforms.
-              Check which formats are supported on the major platforms
-              and make sure your video works in each of these."
-introduction: "Not all video formats are supported on all platforms.
-              Check which formats are supported on the major platforms
-              and make sure your video works in each of these."
+title: "传统平台的替代品"
+description: "并不是所有平台都支持所有的视频格式，检查一下主流平台所支持的视频格式，并且确保你的视频在这些主流平台中都可以运行。"
+introduction: "并不是所有平台都支持所有的视频格式，检查一下主流平台所支持的视频格式，并且确保你的视频在这些主流平台中都可以运行。"
 article:
   written_on: 2014-04-16
-  updated_on: 2014-04-29
+  updated_on: 2014-08-01
   order: 2
 collection: videos
 key-takeaways:
@@ -52,62 +48,58 @@ remember:
 
 </style>
 
-## Check which formats are supported
+## 所支持的视频格式
 
-Use `canPlayType()` to find out which video formats are supported. The method
-takes a string argument consistent of a `mime-type` and optional codecs and
-returns one of the following values:
+使用 `canPlayType(`) 可找出所支持的视频格式。该方法有一个由 `mime-type` 和可选的解码器组成的字符串变量，返回下面这些值：
 
 <table class="table">
   <thead>
     <tr>
-      <th>Return value</th>
-      <th>Description</th>
+      <th>返回值</th>
+      <th>描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="Return value">(empty string)</td>
-      <td data-th="Description">The container and/or codec isn't supported.</td>
+      <td data-th="Return value">(空字符串)</td>
+      <td data-th="Description">不支持容器和/或解码器。</td>
     </tr>
     <tr>
       <td data-th="Return value"><code>maybe</code></td>
       <td data-th="Description">
-        The container and codec(s) might be supported, but the browser
-        will need to download some video to check.
+        或许支持容器和解码器，但浏览器将需要下载一些视频来验证。
       </td>
     </tr>
     <tr>
       <td data-th="Return value"><code>probably</code></td>
-      <td data-th="Description">The format appears to be supported.
+      <td data-th="Description">显然支持该格式。
       </td>
     </tr>
   </tbody>
 </table>
 
-Here are some examples of `canPlayType()` arguments and return values when
-run in Chrome:
+这里有些范例， `canPlayType()` 的参数和在Chrome运行时的返回值：
 
 
 <table class="table">
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Response</th>
+      <th>类型</th>
+      <th>返回值</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="Type"><code>video/xyz</code></td>
-      <td data-th="Response">(empty string)</td>
+      <td data-th="Response">(空字符串)</td>
     </tr>
     <tr>
       <td data-th="Type"><code>video/xyz; codecs="avc1.42E01E, mp4a.40.2"</code></td>
-      <td data-th="Response">(empty string)</td>
+      <td data-th="Response">(空字符串)</td>
     </tr>
     <tr>
       <td data-th="Type"><code>video/xyz; codecs="nonsense, noise"</code></td>
-      <td data-th="Response">(empty string)</td>
+      <td data-th="Response">(空字符串)</td>
     </tr>
     <tr>
       <td data-th="Type"><code>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</code></td>
@@ -125,26 +117,24 @@ run in Chrome:
 </table>
 
 
-## Produce video in multiple formats
+## 生成多种格式的视频
 
-There are lots of tools to help save the same video in different formats:
+有很多工具可以把同一视频保存为其他格式：
 
-* Desktop tools: [FFmpeg](//ffmpeg.org/)
-* GUI applications: [Miro](//www.mirovideoconverter.com/),
+* 桌面工具： [FFmpeg](//ffmpeg.org/)
+* GUI 应用程序： [Miro](//www.mirovideoconverter.com/),
   [HandBrake](//handbrake.fr/), [VLC](//www.videolan.org/)
-* Online encoding/transcoding services:
+* 在线编码/转码服务：
   [Zencoder](//en.wikipedia.org/wiki/Zencoder),
   [Amazon Elastic Encoder](//aws.amazon.com/elastictranscoder)
 
-## Check which format was used
+## 检测所使用的视频格式
 
-Want to know which video format was actually chosen by the browser?
+想知道浏览器实际支持哪些视频格式么？
 
-In JavaScript, use the video's `currentSrc` property to return the source used.
+在 JavaScript 中，使用视频的  `currentSrc` 属性，可返回所使用的源。
 
-To see this in action, check out {% link_sample _code/video-main.html %}this demo{% endlink_sample %}: Chrome and Firefox choose `chrome.webm`
-(because that's the first in the list of potential sources these browsers
-support) whereas Safari chooses `chrome.mp4`.
+想看这个操作的话，可以查看{% link_sample _code/video-main.html %}这个示例{% endlink_sample %}：Chrome 和 Firefox 选用 `chrome.webm`（因为它是这两个浏览器所支持的视频格式列表的第一个条目），而 Safari 选用 `chrome.mp4`。
 
 {% include modules/nextarticle.liquid %}
 

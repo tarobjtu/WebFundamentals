@@ -1,14 +1,12 @@
 ---
 layout: article
-title: "Accessibility matters"
-description: "Accessibility isn't a feature."
-introduction: "Accessibility isn't a feature. Users who can't hear or see won't be able to
-              experience a video at all without captions or descriptions. The time it takes
-              to add these to your video is much less than the bad experience you are
-              delivering to users. Provide at least a base experience for all users."
+title: "可访问性很重要"
+description: " 可访问性不是一个特性。"
+introduction: "可访问性不是一个特性。缺少了字幕和描述，有视力或听力障碍的用户根本无法去了解一个视频。相比糟糕的用户体验，
+               添加此类内容花费的时间不算什么。所以，为所有用户都提供一个基本的用户体验吧。"
 article:
   written_on: 2014-04-16
-  updated_on: 2014-04-29
+  updated_on: 2014-08-01
   order: 4
 collection: videos
 key-takeaways:
@@ -25,7 +23,7 @@ remember:
     - Don't force element sizing that results in an aspect ratio different from the original
       video. Squashed or stretched looks bad.
   accessibility-matters:
-    - The track element is supported on Chrome for Android, iOS Safari, and all current browsers on desktop except Firefox (see <a href="http://caniuse.com/track" title="Track element support status">caniuse.com/track</a>). There are several polyfills available too. We recommend <a href='//www.delphiki.com/html5/playr/' title='Playr track element polyfill'>Playr</a> or <a href='//captionatorjs.com/' title='Captionator track'>Captionator</a>.
+    - Chrome for Android，iOS Safari 和当前所有的桌面浏览器都支持轨道元素，除了火狐（参见 <a href="http://caniuse.com/track" title="Track element support status">caniuse.com/track</a>）。 可以用填充物（polyfills）替代，我们推荐 <a href='//www.delphiki.com/html5/playr/' title='Playr track element polyfill'>Playr</a> 或者 <a href='//captionatorjs.com/' title='Captionator track'>Captionator</a>。
   construct-video-streams:
     - MSE is supported by Chrome and Opera on Android, and in Internet Explorer 11 and Chrome for desktop, with support planned for <a href='http://wiki.mozilla.org/Platform/MediaSourceExtensions' title='Firefox Media Source Extensions implementation timeline'>Firefox</a>.
   optimize:
@@ -52,28 +50,27 @@ remember:
 </style>
 
 
-## Include captions to improve accessibility
+## 引入字幕来增加可访问性
 
-To make media more accessible on mobile, include captions or descriptions
-using the track element.
+利用轨道元素 `<track>` 添加字幕或描述来增加媒体在移动设备上的可访问性。
 
 {% include modules/remember.liquid title="Remember" list=page.remember.accessibility-matters %}
 
-Using the track element, captions appear like this:
+使用了轨道元素后，字幕看起来是这样的：
 
  <img class="center" alt="Screenshot showing captions displayed using the track element in Chrome on Android" src="images/Chrome-Android-track-landscape-5x3.jpg">
 
-## Add track element
+## 添加轨道元素
 
-It's very easy to add captions to your video &ndash; simply add a track element as a child of the video element:
+为视频添加字幕很简单，就是添加一个轨道元素作为视频元素的孩子：
 
 {% include_code _code/track.html track html %}
 
-The track element `src` attribute gives the location of the track file.
+轨道元素的 `src` 属性提供了轨道文件的位置。
 
-## Define captions in track file
+## 在轨道文件中定义字幕
 
-A track file consists of timed 'cues' in WebVTT format:
+轨道文件使用 WebVTT 格式描述时间的开始:
 
     WEBVTT
 

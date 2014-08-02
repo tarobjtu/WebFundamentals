@@ -2,3 +2,6 @@ build
 .DS_Store
 .sass-cache/
 node_modules/
+
+appengine/build
+src/Gemfile.lock

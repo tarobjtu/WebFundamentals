@@ -1,8 +1,8 @@
 ---
 layout: landing
-title: "Device Access"
-description: "You have a surprising amount of access to the user's device, from Geo Location and Device Orientation, to Access to the communication stack such the dialer and SMS.  Learn how to take advantage of features that your users will love"
-introduction: "You have a surprising amount of access to the user's device, from Geo Location and Device Orientation, to Access to the communication stack such the dialer and SMS.  Learn how to take advantage of features that your users will love"
+title: "设备访问"
+description: " 你拥有数量惊人的用户设备访问权限，从地理位置和设备方向到通信栈访问如拨号器和短信；学习如何使用用户喜欢的功能。"
+introduction: "你拥有数量惊人的用户设备访问权限，从地理位置和设备方向到通信栈访问如拨号器和短信；学习如何使用用户喜欢的功能"
 snippet: "Locate, call and snap"
 id: device-access
 collection: home
