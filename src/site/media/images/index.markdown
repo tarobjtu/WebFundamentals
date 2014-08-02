@@ -1,14 +1,14 @@
 ---
 layout: section
-title: "Images"
-description: "A picture is worth 1000 words, and images play an integral part of every page. But they also often account for most of the downloaded bytes.  With Responsive web design not only can our layouts change based on device characteristics, but images as well."
-introduction: "A picture is worth 1000 words, and images play an integral part of every page. But they also often account for most of the downloaded bytes.  With responsive web design not only can our layouts change based on device characteristics, but images as well."
+title: "图片"
+description: "一图胜千言，说的是图像是每个页面中不可或缺的一部分。图片同时占据着页面下载字节数的绝大部分。在响应式设计中，按照设备特性变化的不仅有布局还有图片。"
+introduction: "一图胜千言，说的是图像是每个页面中不可或缺的一部分。图片同时占据着页面下载字节数的绝大部分。在响应式设计中，按照设备特性变化的不仅有布局还有图片。"
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-04-30
+  updated_on: 2014-08-02
   order: 1
 collection: introduction-to-media
 id: images
@@ -67,25 +67,16 @@ related:
   <iframe src="https://www.youtube.com/embed/vpRsLPI400U?controls=2&modestbranding=1&showinfo=0&utm-source=crdev-wf" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-### Responsive images
+### 响应式图片
 
-Responsive web design means that not only can our layouts change based on device
-characteristics, but content as well.  For example, on high resolution (2x)
-displays, high resolution graphics are needed to ensure sharpness.  An image
-that  is 50% width may work just fine when the browser is 800px wide, but will
-use too much real estate on a narrow phone, and still comes at the same
-bandwidth overhead when scaled down to fit on a smaller screen.
+响应式 Web 设计意味着根据设备特性变化的不仅有布局，还有图片。例如，在高分辨率设备上，就需要使用高分辨率的图片以保证图像的清晰度。一个只有50%宽度的图片可以在浏览器只有800px宽度的时候表现良好，但是却会在较狭窄的手机屏幕中占据太多的资源。图像变小了，而使用的带宽却并没有减小。
 
-### Art direction
+### 艺术指导
 
 <img class="center" src="img/art-direction.png" alt="Art direction example"
 srcset="img/art-direction.png 1x, img/art-direction-2x.png 2x">
 
-Other times the image may need to be changed more drastically: changing the
-proportions, cropping and even replacing the entire image.  In this case,
-changing the image is usually referred to as art direction.  See
-[responsiveimages.org/demos/](http://responsiveimages.org/demos/) for more
-examples.
+图片有时需要做更加精细的处理：更改方向，进行裁剪，或者直接整张替换。这种情况下对图片所做的更改通常被称为艺术指导（Art Direction）。请查看 [responsiveimages.org/demos/](http://responsiveimages.org/demos/) 上更多的例子。
 
 {% include modules/nextarticle.liquid %}
 
