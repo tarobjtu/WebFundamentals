@@ -5,3 +5,4 @@ node_modules/
 
 appengine/build
 src/Gemfile.lock
+src/site/icons
