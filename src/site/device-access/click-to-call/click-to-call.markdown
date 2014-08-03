@@ -1,15 +1,11 @@
 ---
 layout: article
-title: "Click to call"
-description: "On devices with phone capabilities, make it easy for users to
-  directly connect with you by simply tapping a phone number, more commonly
-  known as click to call."
-introduction: "On devices with phone capabilities, make it easy for users to
-  directly connect with you by simply tapping a phone number, more commonly
-  known as click to call. "
+title: "快速通话"
+description: "用户在有通话功能的设备上简单点击一个电话号码就能直接打电话给你。"
+introduction: "用户在有通话功能的设备上简单点击一个电话号码就能直接打电话给你。"
 article:
   written_on: 2014-06-17
-  updated_on: 2014-06-17
+  updated_on: 2014-08-02
   order: 1
 id: click-to-call
 rel:
@@ -17,9 +13,9 @@ rel:
   twitterauthor: "@petele"
 collection: click-to-call
 key-takeaways:
-  c2c: 
-    -  Wrap all phone numbers in hyperlinks with the <code>tel:</code> schema
-    -  Always use the international dialing format
+  c2c:     
+    -  使用 <code>tel:</code> 语法链接电话号码
+    -  总是使用国际化的电话格式
 ---
 
 {% wrap content %}
@@ -35,66 +31,51 @@ key-takeaways:
 
 {% include modules/takeaway.liquid list=page.key-takeaways.c2c %}
 
-## Link telephone numbers for click to call
+## 链接电话号码以快速通话
 
-While many modern mobile browsers will automatically detect phone numbers 
-and convert them to links, it’s a good idea to do this directly in your code.
-By manually tagging each phone number, you can ensure phone numbers are always
-enabled for click to call and that they will be styled to match your site.
+虽然很多现代浏览器会自动检测电话号码并将其转化为链接，但更好的方式是在你的代码里手动链接电话号码。
+通过手动的给每个号码添加标记，你就能确保他们总是可以点击并且样式符合你网站的设计。
 
-To mark a phone number as a link, use the `tel:` scheme.  The syntax is 
-simple:
+使用 `tel:` 语法将链接电话号码，语法如下：
 
 {% highlight html %}
 NIST Telephone Time-of-Day Service <a href="tel:+1-303-499-7111">+1 (303) 499-7111</a>
 {% endhighlight %}
 
-Results in:
+效果为:
 
 NIST Telephone Time-of-Day Service <a href="tel:+1-303-499-7111">+1 (303) 499-7111</a>
 
 <img src="images/click-to-call_framed.jpg" class="center" alt="Click to call example.">
 
-On most devices with telephone capabilities, the user will receive a
-confirmation before the number is dialed, to ensure users are not being
-tricked into calling expensive long distance or premium phone numbers. 
-When the device doesn’t support phone calls, users may be presented with a
-menu allowing them to choose how the browser should handle the number.
+在大多数有通话功能的设备中，用户需要在拨出号码前确认，以确保他们不会不小心拨出昂贵的长途号码。
+如果设备不支持通话功能，浏览器将会显示一个菜单询问用户如何处理这串数字。
 
-Desktop browsers that don’t support voice calls will open the default
-telephony app on the computer, for example Google Voice or Microsoft
-Communicator.
+不支持声音呼叫的桌面浏览器会打开计算机上默认的电话应用，比如 Google Voice 或 Microsoft
+Communicator。
 
-## Use the international dialing format
+## 使用国际化的电话格式
 
-Always supply the phone number using the international dialing format: 
-the plus sign (+), country code, area code and number.  While not absolutely
-necessary, it’s a good idea to separate each segment of the number with a
-hyphen (-) for easier reading and better auto-detection.
+总是提供使用国际化格式的电话号码：
+加号（+）、国家代号、地区代号和数字。
+为了方便阅读和实现更好的自动化检测功能，最好用连字符（-）来分割这些代码和数字。
 
-Using a hyphenated international dialing format ensures that no matter where
-the user is calling from, whether a few hundred meters away or thousands
-of kilometers, their call will be connected.
+用连字符（-）连接的电话格式确保了来自世界各地的用户都能进行通话。
 
-## Disable auto-detection when necessary
+## 必要时禁用自动检测功能
 
-Modern mobile browsers will automatically detect phone numbers and enable
-click to call.  Mobile Safari automatically converts phone numbers to links
-with the associated hyperlink styles.  Chrome for Android will automatically
-detect phone numbers and will allow users to click to call, but does not wrap
-them in hyperlinks or apply any special styles.
+现代的手机浏览器会自动检测电话号码以实现点击呼叫。
+手机上的 Safari 浏览器会自动将电话号码转化为链接，并配上超链接样式。
+手机上安卓版的 Chrome 浏览器也会自动将电话号码转化为链接，但并不会配上超链接样式。
 
-To prevent Mobile Safari from automatically detecting phone numbers, add the
-following meta tag to the top of the page:
+在页面顶部添加以下这个 meta 标签来阻止手机端的 Safari 浏览器自动检测电话号码：
 
 {% highlight html %}
 <meta name="format-detection" content="telephone=no">
 {% endhighlight %}
 
-## Other click to call features
+## 其他快速通话特色
 
-In addition to the `tel:` schema, some modern browsers also support the `sms:`
-and `mms:` schemas, though support is not as consistent, and some
-features like setting the message body don't always work.  
+除了 `tel:` 语法，一些现代浏览器也支持 `sms:` 和 `mms:` 但支持的并不一致，还有一些特色比如自动填写信息内容的功能也不一定支持。
 
 {% endwrap %}
