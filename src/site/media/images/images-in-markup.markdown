@@ -1,43 +1,29 @@
 ---
 layout: article
-title: "Images in Markup"
-description: "The `img` element is powerful – it downloads, decodes and renders content – and
-modern browsers support a range of image formats."
-introduction: "The <code>img</code> element is powerful – it downloads,
-decodes and renders content – and modern browsers support a range of image 
-formats.  Including images that work across devices is no different than for 
-desktop, and only requires a few minor tweaks to create a good experience."
+title: "带标签的图片"
+description: "<code>img</code> 元素十分强大 – 它能够下载，解析并渲染内容 – 且现代浏览器支持多种图像格式。引入能够跨设备的图像，与放置专为桌面浏览器定制的图像没什么不同，只需要几个小调整就能有很好的体验。"
+introduction: "<code>img</code> 元素十分强大 – 它能够下载，解析并渲染内容 – 且现代浏览器支持多种图像格式。引入能够跨设备的图像，与放置专为桌面浏览器定制的图像没什么不同，只需要几个小调整就能有很好的体验。"
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-06-12
+  updated_on: 2014-08-04
   order: 1
 collection: images
 key-takeaways:
   img-in-markup:
-    - Use relative sizes for images to prevent them from accidentally
-      overflowing the container.
-    - Use the <code>picture</code> element when you want to specify different
-      images depending on device characteristics (a.k.a. art direction).
-    - Use <code>srcset</code> and the <code>x</code> descriptor in the 
-      <code>img</code> element to give hints to the browser about the best 
-      image to use when choosing from different densities.
+    - 图片使用相对大小以避免意外溢出容器。
+    - 当需要根据设备特征（亦称艺术指导，art direction）来指定不同图片时，使用 <code>picture</code> 元素。
+    - 在 <code>img</code> 元素中使用 <code>srcset</code> 和 <code>x</code> 描述符来提示浏览器在不同密度下选择最佳图片。
 remember:
   picture-support:
-    - The <code>picture</code> element is still <b>under development</b> and
-      as of June 2014 is only available in nightlies.  Because of it’s strong 
-      backward compatibility and the
-      <a href="http://picturefill.responsiveimages.org/">Picturefill polyfill</a>,
-      we have included it now and recommend you use it with caution. 
-      See the <a href="http://responsiveimages.org/#implementation">
-      ResponsiveImages.org</a> site for further details. 
+    - <code>picture</code> 元素还在<b>开发中</b>，在2014年6月之前只有日更版（nightly）可用。因为其强向后兼容性和 
+      <a href="http://picturefill.responsiveimages.org/">Picturefill</a> 插件的支持，我们现在就引入进来但建议您谨慎使用。详情参看
+       <a href="http://responsiveimages.org/#implementation">
+      ResponsiveImages.org</a>。 
   compressive:
-    - Use caution with the compressive technique because of the increased
-      memory and decoding costs it requires.  Resizing large images to fit on
-      smaller screens is expensive and can be particularly painful on low-end
-      devices where both memory and processing is limited.
+    - 谨慎使用压缩技术，因为它需要占用更多内存并且需要解码。调整图像以适合小屏幕的代价是非常昂贵的，在内存和处理能力都非常有限的低端设备上更会是苦不堪言。
 ---
 
 {% wrap content%}
@@ -59,16 +45,11 @@ remember:
 {% include modules/takeaway.liquid list=page.key-takeaways.img-in-markup %}
 
 
-## Use relative sizes for images
+## 图片使用相对大小
 
-Remember to use relative units when specifying widths for images to prevent them
-from accidentally overflowing the viewport.  For example, `width: 50%;`, will
-cause the image width to be 50% of the containing element (not the viewport or
-actual pixel size).
+在指定图片宽度时，请记得使用相对单位以防止图片意外溢出视口。例如 `width: 50%;` 会使图片宽度变成容器元素（不是视口或实际像素）宽度的50%。
 
-Because CSS allows content to overflow it's container, it may be necessary use
-max-width: 100% to prevent images and other content from overflowing.  For
-example:
+因为 CSS 允许内容溢出它的容器，有必要使用 `max-width: 100%` 防止图片及其他元素溢出。例如：
 
 {% highlight css %}
 img, embed, object, video {
@@ -76,82 +57,44 @@ img, embed, object, video {
 }
 {% endhighlight %}
 
-Be sure to provide meaningful descriptions via the `alt` attribute on `img`
-elements; these help make your site more accessible by providing context to
-screen readers and other assistive technologies.
+确保使用 `alt` 属性为 `img` 元素提供有意义的描述，这些措施能提高网站的可访问性，更好地为屏幕阅读器等辅助设备提供上下文。
 
-## Enhance `img`'s with `srcset` for high DPI devices
+## 使用 `img` 标签的 `srcset` 属性为高DPI设备优化
 
-The `srcset` attribute enhances the behavior of the `img` element, making it 
-easy to provide multiple image files for different device characteristics. 
-Similar to the `image-set` [CSS function](images-in-css.html#use-image-set-to-provide-high-res-images) native to CSS, `srcset` allows the browser to choose the best 
-image depending on the characteristics of the device, for example using a 2x 
-image on a 2x display, and potentially in the future, a 1x image on a 2x 
-device when on a limited bandwidth network.
+`srcset` 属性强化了 `img` 元素的行为，使其更容易为不同设备提供不同图片文件。与 CSS 中的 `image-set` [CSS function](images-in-css.html#use-image-set-to-provide-high-res-images) 相似，`srcset` 允许浏览根据设备特性选择最佳图片，例如在 2x 大小的显示屏上显示 2x 的图片，或者当 2x 设备在网络带宽受限时显示 1x 大小的图片。
 
 {% highlight html %}
 <img src="photo.png" srcset="photo@2x.png 2x" ...>
 {% endhighlight %}
 
-On browsers that don't support `srcset`, the browser simply uses the default
-image file specified by the `src` attribute.  This is why it is important to
-always include a 1x image that can be displayed on any device, regardless of
-capabilities.  When `srcset` is supported, the  comma-separated list of
-image/conditions is parsed prior to making any requests, and only the most
-appropriate image is downloaded and displayed.
+在那些不支持 `srcset` 的浏览器上，浏览器只会简单地显示 `src` 属性指定的默认图像。这就是为什么一定要包含 1x 大小的图片，因为它能在所有的设备上显示。支持  `srcset` 属性的浏览器会解析由英文逗号分割的 图像/条件 列表，只有最合适的图像才会被下载和显示。
 
-While the conditions can include everything from pixel density to width and 
-height, only pixel density is well supported today.  To balance current
-behavior with future features, stick with simply providing the 2x image in
-the attribute.
+虽然条件项有很多内容包括像素密度、宽度和高度等等，但目前只有像素密度被广泛支持。要平衡当前的表现与未来的特性，总是在属性中指定 2x 大小的图片就可以了。
 
-## Art direction in responsive images with `picture`
+## `picture` - 响应式图片的艺术指导
 
-Changing images based on device characteristics, also known as art direction
-can be accomplished using the picture element.  The `picture` element defines
-a declarative solution for providing multiple versions of an image based on
-different characteristics, like device size, device resolution, orientation,
-and more.
+根据设备特性改变图片，即艺术指导（Art Direction）可以由 `picture` 元素来完成。为了实现根据不同设备特点提供图片的不同版本，`picture` 元素定义了一套声明式的解决方案。比如设备大小，设备分辨率，方向，等等。
 
 <img class="center" src="img/art-direction.png" alt="Art direction example"
 srcset="img/art-direction.png 1x, img/art-direction-2x.png 2x">
 
 {% include modules/remember.liquid title="Important" list=page.remember.picture-support %}
 
-The `picture` element should be used when an image source exists in multiple
-densities, or when a responsive design dictates a somewhat different image on
-some types of screens.  Similar to the `video` element, multiple `source`
-elements can be included, making it possible to specify different image files
-depending on media queries or image format.
+当图片要在多种设备中显示或者响应式设计要求在不同屏幕大小中显示不同图片时，就要考虑用 `picture` 元素。与 `video` 元素一样，这里可以包含多个 `source`，就可以根据媒体查询（media query）或图片格式来指定不同图片。
 
 {% include_code _code/media.html picture html %}
 
-In the above example, if the browser width is at least 800px, then either
-`300.png` or `600.png` will be used, depending on the device resolution.  If
-the browser is between 400px and 800px, then either `200.png` or `400.png`
-will be used, again, depending on the device resolution.  For backwards
-compatibility or where the `picture` element isn’t supported, the browser
-will render the `img` element instead, and should always be included.
+上面的例子中，如果浏览器宽度在 800px 以上，那么 `head.jpg` 与 `head-2x.jpg` 之一会被使用，取决于设备的分辨率。如果浏览器是在 450px 到 800px 之间，那么`head-small.jpg` 与 `head-small-2x.jpg` 之一会被使用，也是取决于设备的分辨率。当为了向后兼容或不支持 `picture` 时，浏览器会渲染 `img` 元素，所以记得加上去。
 
-### Relative sized images
+### 图片相对大小
 
-When the final size of the image isn’t known, it can be difficult to specify 
-a density descriptor for the image sources.  This is especially true for
-images that span a proportional width of the browser and are fluid, depending
-on the size of the browser.
+当图片最终大小不可知时，很难去为图片源指定密度描述符。尤其是当图片宽度需要根据浏览器大小按比例动态变化。
 
-Instead of supplying fixed image sizes and densities, the size of each 
-supplied image can be specified by adding a width descriptor along with the
-size of the image element, allowing the browser to automatically calculate
-the effective pixel density and choose the best image to download.
+不用提供固定的大小和密度，在图片元素大小后面加上一个宽度描述符 `w`，让浏览器自动计算有效像素密度，选择最佳的图片下载。
 
 {% include_code _code/sizes.html picture html %}
 
-The above example renders an image that is half of the viewport width
-(`sizes="50vw"`), and depending on the width of the browser and it’s device
-pixel ratio, allowing the browser to choose the correct image regardless of
-how large the browser window is.  For example, the table below shows which
-image the browser would choose:
+上面的例子渲染了一张占视口一半宽度的图片（`sizes="50vw"`），然后根据浏览器的宽度与设备像素比，不管浏览器窗口有多大，浏览器都能选择正确的图片。下面的表格说明了浏览器如何选择图片：
 
 <table class="table-4">
   <colgroup>
@@ -162,10 +105,10 @@ image the browser would choose:
   </colgroup>
   <thead>
     <tr>
-      <th data-th="Browser width">Browser width</th>
-      <th data-th="Device pixel ratio">Device pixel ratio</th>
-      <th data-th="Image used">Image used</th>
-      <th data-th="Effective resolution">Effective resolution</th>
+      <th data-th="Browser width">浏览器宽度</th>
+      <th data-th="Device pixel ratio">设备像素比</th>
+      <th data-th="Image used">图片选择</th>
+      <th data-th="Effective resolution">有效分辨率</th>
     </tr>
   </thead>
   <tbody>
@@ -209,53 +152,31 @@ image the browser would choose:
 </table>
 
 
-### Account for breakpoints in responsive images
+### 为响应式图片声明断点
 
-In many cases, the size or image may change depending on the site’s layout
-breakpoints.  For example, on a small screen, you might want the image to
-span the full width of the viewport, while on larger screens, it should only
-take a small proportion.  
+很多情况下，图片的大小需要依据网站的布局断点改变。比如在小屏幕上，图片可能要占满视口的宽度，而在大屏幕上，它可能只占一小部分。
 
 {% include_code _code/breakpoints.html picture html %}
 
-The `sizes` attribute in the above example uses several media queries to
-specify the the size of them image.  When the browser width is greater than
-600px, the image will be 25% of the viewport width, when it is between 500px
-and 600px, the image will be 50% of the viewport width, and below 500px, it
-will be full width.
+上面例子的 `size` 属性使用了几个媒体查询来指定图片的大小。当浏览器宽度大于 600px 时，图片会占视口宽度的 25%；当宽度为 500px 到 600px 之间时，图片会占视口宽度的 50%；低于 500px 则占满整个视口宽度。
 
+## 其他图像技术
 
-## Other image techniques
+### 压缩图片
 
-### Compressive images
-
-The [compressive image
-technique](http://www.html5rocks.com/en/mobile/high-dpi/#toc-tech-overview)
-serves a highly compressed 2x image to all devices, no matter the actual
-capabilities of the device.  Depending on the type of image and level of
-compression, image quality may not appear to change, but the file size drops
-significantly.
+[图像压缩技术](http://www.html5rocks.com/en/mobile/high-dpi/#toc-tech-overview)为所有设备提供高压缩的 2x 大小图片，而不论设备的实际性能。根据图像的类型和压缩级别，图像质量看上去可能没有太大的变化，但其大小会显著降低。
 
 {% link_sample _code/compressive.html %}
-See example
+参见例子
 {% endlink_sample %}
 
 {% include modules/remember.liquid title="Important" list=page.remember.compressive %}
 
-### JavaScript image replacement
+### JavaScript 图像替代方案
 
-JavaScript image replacement checks the capabilities of the device and "does the
-right thing". You can determine device pixel ratio via
-`window.devicePixelRatio`, get screen width and height, and even potentially do
-some network connection sniffing via `navigator.connection` or issuing a fake
-request. Once you've collected all of this information, you can decide which
-image to load.
+JavaScript 图像替代是指先检查设备的性能参数，然后“见机行事”。可以通过 `window.devicePixelRatio` 来检测设备像素比，`width` 和 `height` 取得宽高，甚至可以通过 `navigator.connection` 去嗅探网络连接或者发送一个假请求。得到这些信息之后你就可以决定什么情况下加载什么图片。
 
-One big drawback to this approach is that using JavaScript means that you will
-delay image loading until at least the look-ahead parser has finished. This
-means that images won't even start downloading until after the `pageload` event
-fires. In addition, the browser will most likely download both the 1x and 2x
-images, resulting in increased page weight.
+这种方法最大的一个缺点是使用 JavaScript 意味着图片会延迟加载至少到前瞻解析器（look-ahead parser）完成后。也就是说图片在 `pageload` 事件发射前都不会开始下载。此外，浏览器将最有可能下载 1x 和 2x 大小的图像，从而增加了页面权重。
 
 {% include modules/nextarticle.liquid %}
 
