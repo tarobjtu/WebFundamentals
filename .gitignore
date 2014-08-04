@@ -2,3 +2,6 @@ build
 .DS_Store
 .sass-cache/
 node_modules/
+src/site/icons/icons.eot
+src/site/icons/icons.ttf
+src/site/icons/icons.woff
