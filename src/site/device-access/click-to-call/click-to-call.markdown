@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "Click to call"
-description: "在具有电话功能的设备上，方便用户通过轻轻点击一串电话号码来直接联系你，这通常被称作 Click to call。"
-introduction: "在具有电话功能的设备上，方便用户通过轻轻点击一串电话号码来直接联系你，这通常被称作 Click to call。"
+description: "在具有电话功能的设备上，用户通过轻轻点击一串电话号码来方便地直接联系你，这通常被称作 Click to call。"
+introduction: "在具有电话功能的设备上，用户通过轻轻点击一串电话号码来方便地直接联系你，这通常被称作 Click to call。"
 article:
   written_on: 2014-06-17
   updated_on: 2014-06-17
