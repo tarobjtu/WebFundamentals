@@ -1,10 +1,8 @@
 ---
 layout: article
-title: "Device motion"
-description: "Device motion provides information about force of acceleration
-  being applied to the device at a given moment, and the rate of rotation."
-introduction: "Device motion provides information about force of acceleration
-  being applied to the device at a given moment, and the rate of rotation."
+title: "设备运动传感系统"
+description: "设备运动传感系统能够设定的场景下将设备的运动状态返回给我们，包括设备运动加速度和转速。"
+introduction: "设备运动传感系统能够设定的场景下将设备的运动状态返回给我们，包括设备运动加速度和转速。"
 article:
   written_on: 2014-06-17
   updated_on: 2014-06-17
@@ -15,12 +13,11 @@ rel:
   twitterauthor: "@petele"
 collection: device-orientation
 key-takeaways:
-  devmotion: 
-    -  Use device motion for when the current motion of the device is needed.
-    -  <code>rotationRate</code> is provided in &deg;/sec.
-    -  <code>acceleration</code> and <code>accelerationWithGravity</code> is
-       provided in m/sec<sup>2</sup>.
-    -  Be aware of differences between browser implementations.
+  devmotion:
+    -  在需要获取当前时刻运动信息时调用设备运动传感系统。
+    -  <code>rotationRate</code> 提供的设备转速是以 &deg;/sec 为单位。
+    -  <code>acceleration</code> 和 <code>accelerationWithGravity</code> 提供的设备运动加速度是以 m/sec<sup>2</sup> 为单位。
+    -  了解不同浏览器在设备运动传感系统相关实现上的区别。
 ---
 
 {% wrap content %}
@@ -29,39 +26,33 @@ key-takeaways:
 
 {% include modules/takeaway.liquid list=page.key-takeaways.devmotion %}
 
-## When to use device motion events
+## 何时调用设备运动传感系统提供的事件
 
-There are several uses for device motion events.  For example:
+其实身边有很多场景需要使用设备运动传感系统提供的事件，举几个栗子：
 
 <ul>
-  <li>Shake gesture to refresh data.</li>
-  <li>In games to cause characters to jump or move.</li>
-  <li>For health and fitness apps</li>
+  <li>通过晃动设备触发数据更新。</li>
+  <li>游戏中，我们常常会需要通过设备的运动实现对人物运动的控制。</li>
+  <li>健康和健身类的应用中对设备运动传感系统的需求就不言而喻了。</li>
 </ul>
 
-## Check for support and listen for events
+## 检查浏览器兼容性并监听对应事件
 
-To listen for `DeviceMotionEvent`s, first, check to see if the events are
-supported in the browser.  Then, attach an event listener to the `window` 
-object listening for `devicemotion` events. 
+实现设备运动事件监听：首先，先检查设备浏览器是否支持设备运动事件，假如存在，则在全局变量`window`上添加事件监听器；
 
 {% include_code _code/jump-test.html devmot javascript %}
 
-## Handle the device motion events
+## 如何处理事件所提供的数据数据
 
-The device motion event fires on a regular interval and returns data about the
-rotation (in &deg; per second) and acceleration (in m per second<sup>2</sup>)
-of the device, at that moment in time.  Some devices do not have the hardware
-to exclude the effect of gravity.
+设备运动事件会在有规律的时间间隔上被触发并返回设备的转速（单位：&deg;/s）和运动加速度（单位：m/s<sup>2</sup>）。需要注意，部分设备由于硬件受限无法返回除去重力加速外的加速度。
 
-The event returns four properties, 
-<a href="index.html#device-frame-coordinate">`accelerationIncludingGravity`</a>, 
-<a href="index.html#device-frame-coordinate">`acceleration`</a>, 
-which excludes the effects of gravity, 
-<a href="index.html#rotation-data">`rotationRate`</a> and `interval`.
+设备运动事件被触发的同时会返回四个属性值，
+<a href="index.html#device-frame-coordinate">`accelerationIncludingGravity`</a>,
+<a href="index.html#device-frame-coordinate">`acceleration`</a>,
+（除去重力加速外的加速度），
+<a href="index.html#rotation-data">`rotationRate`</a> 和 `interval`.
 
-For example, let's take a look at a phone, lying on a flat table,
-with it's screen facing up.
+举个栗子，将手机水平向上地放置在水平桌面上。
 
 <table class="table-4">
   <colgroup>
@@ -72,33 +63,33 @@ with it's screen facing up.
   </colgroup>
   <thead>
     <tr>
-      <th data-th="State">State</th>
-      <th data-th="Rotation">Rotation</th>
-      <th data-th="Acceleration (m/s<sup>2</sup>)">Acceleration (m/s<sup>2</sup>)</th>
-      <th data-th="Acceleration with gravity (m/s<sup>2</sup>)">Acceleration with gravity (m/s<sup>2</sup>)</th>
+      <th data-th="State">运动状态</th>
+      <th data-th="Rotation">转速</th>
+      <th data-th="Acceleration (m/s<sup>2</sup>)">加速度（不含重力加速度）(m/s<sup>2</sup>)</th>
+      <th data-th="Acceleration with gravity (m/s<sup>2</sup>)">加速度（含重力加速度）(m/s<sup>2</sup>)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="State">Not moving</td>
+      <td data-th="State">静止</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[0, 0, 0]</td>
       <td data-th="Acceleration with gravity">[0, 0, 9.8]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving up towards the sky</td>
+      <td data-th="State">垂直向上运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[0, 0, 5]</td>
       <td data-th="Acceleration with gravity">[0, 0, 14.81]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving only to the right</td>
+      <td data-th="State">仅向右水平运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[3, 0, 0]</td>
       <td data-th="Acceleration with gravity">[3, 0, 9.81]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving up &amp; to the right</td>
+      <td data-th="State">同时垂直向上并向右运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[5, 0, 5]</td>
       <td data-th="Acceleration with gravity">[5, 0, 14.81]</td>
@@ -106,8 +97,7 @@ with it's screen facing up.
   </tbody>
 </table>
 
-Conversely, if the phone were held so the screen was perpendicular to the
-ground, and was directly visible to the viewer:
+相反地，如果手机是被握着的，通常屏幕会垂直于地面并正对着用户：
 
 <table class="table-4">
   <colgroup>
@@ -118,33 +108,33 @@ ground, and was directly visible to the viewer:
   </colgroup>
   <thead>
     <tr>
-      <th data-th="State">State</th>
-      <th data-th="Rotation">Rotation</th>
-      <th data-th="Acceleration (m/s<sup>2</sup>)">Acceleration (m/s<sup>2</sup>)</th>
-      <th data-th="Acceleration with gravity (m/s<sup>2</sup>)">Acceleration with gravity (m/s<sup>2</sup>)</th>
+      <th data-th="State">运动状态</th>
+      <th data-th="Rotation">转速</th>
+      <th data-th="Acceleration (m/s<sup>2</sup>)">加速度（不含重力加速度）(m/s<sup>2</sup>)</th>
+      <th data-th="Acceleration with gravity (m/s<sup>2</sup>)">加速度（含重力加速度）(m/s<sup>2</sup>)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="State">Not moving</td>
+      <td data-th="State">静止</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[0, 0, 0]</td>
       <td data-th="Acceleration with gravity">[0, 9.81, 0]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving up towards the sky</td>
+      <td data-th="State">垂直向上运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[0, 5, 0]</td>
       <td data-th="Acceleration with gravity">[0, 14.81, 0]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving only to the right</td>
+      <td data-th="State">仅向右水平运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[3, 0, 0]</td>
       <td data-th="Acceleration with gravity">[3, 9.81, 0]</td>
     </tr>
     <tr>
-      <td data-th="State">Moving up &amp; to the right</td>
+      <td data-th="State">同时垂直向上并向右运动</td>
       <td data-th="Rotation">[0, 0, 0]</td>
       <td data-th="Acceleration">[5, 5, 0]</td>
       <td data-th="Acceleration with gravity">[5, 14.81, 0]</td>
@@ -152,16 +142,12 @@ ground, and was directly visible to the viewer:
   </tbody>
 </table>
 
-### Sample: Calculating the maximum acceleration of an object
+### 案例：利用设备运动传感系统提供的接口计算设备最快的加速度
 
-One way to use  device motion events is to calculate the maximum acceleration
-of an object.  For example, what's the maximum acceleration of a person 
-jumping.
+常见的设备运动传感系统使用场景是计算设备最快的加速度。举个栗子，我们需要通过计算设备最快的加速度来估算人在跳跃过程中最快的加速度。
 
 {% include_code _code/jump-test.html devmothand javascript %}
 
-After tapping the Go! button, the user is told to jump!  During that time,
-the page stores the maximum (and minimum) acceleration values, and after the
-jump, tells the user their maximum acceleration.
+在点击“GO!”按钮后，网页会开始统计设备的加速度，并提示你进行跳跃；在完成跳跃后，网页会统计出跳跃过程中的最大加速度。
 
 {% endwrap %}
