@@ -20,7 +20,7 @@ toc:
           path: /layouts/layout-patterns/
         - title: "UI Elements"
           path: /layouts/ui-elements/
-    - title: "Forms 和 User Input"
+    - title: "表单与用户输入"
       path: /input/
       id: user-input
       section:
