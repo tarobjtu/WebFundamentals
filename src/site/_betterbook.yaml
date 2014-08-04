@@ -1,10 +1,13 @@
 toc:
 - title: "Web <strong>Fundamentals</strong>"
+  text: "Web <strong>Fundamentals</strong>"
   path: /
   home: true
 - title: "Get Started"
+  text: "开始"
   path: /getting-started/your-first-multi-screen-site/
 - title: "Documentation"
+  text: "文档中心"
   path: /#documentation
   hasSubNav: true
   section:
@@ -66,17 +69,19 @@ toc:
           path: /performance/optimizing-interactivity/
         - title: "Measuring Performance"
           path: /performance/measuring-performance/
-- title: Tools
+- title: "Tools"
+  text: "工具"
   path: /tools/
-- title: Resources
+- title: "Resources"
+  text: "参考资料"
   path: /resources/
   in_header: false
   section:
-  - title: "Glossary"
+  - title: "术语表"
     path: /resources/glossary/
   - title: "Samples"
     path: /resources/samples/
-  - title: "Styleguide"
+  - title: "样式指南"
     path: /resources/styleguide/
-  - title: "Example Article"
+  - title: "示例文章"
     path: /resources/example-article/
