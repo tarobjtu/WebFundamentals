@@ -2,7 +2,7 @@
 layout: article
 title: "创建网站内容和结构"
 description: "内容是所有网站的最重要部分。在这篇课程中，我们将向你展示如何快速规划并构建你的首个跨终端网站。"
-introduction: "内容是任何网站最重要的部分。因此，让设计服务于内容，而不是设计支配内容。在这篇指南中，首先确定我们需要的内容，然后根据内容来创建结构，接着以简单的线性布局展示网页。线性布局在宽窄视口（ViewPort）方面具有良好效果。（注：ViewPort，视口、视觉窗口，即显示区域）"
+introduction: "内容是任何网站最重要的部分。所以设计要服务于内容，而不是设计支配内容。这个教程中，首先确定我们需要的内容，然后根据内容来创建结构，接着以简单的线性布局展示网页。线性布局在宽窄视口（ViewPort）方面具有良好效果。（注：ViewPort，视口、视觉窗口，即显示区域）"
 notes:
   styling:
     - 样式一会来噢~
@@ -187,7 +187,7 @@ images  have a descriptive `alt` tag that the screen reader can speak out to
 the user.
 
 When adding `alt` tags make sure that you keep the alt text as concise as
-possible to fully describe  the image.  For example in our demo we simply 
+possible to fully describe  the image.  For example in our demo we simply
 format the attribute to be "Name: Role", this presents enough information
 to the user to understand that this section is about the authors and what
 their job is.
