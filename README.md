@@ -1,8 +1,10 @@
 Web Fundamentals翻译工作
 =======================
-Web Fundamentals是非常好的跨终端WEB学习教程，翻译这系列教程的初衷是作为团队新入职的童鞋和实习生的新人Landing教程。幸运的是[伯乐在线](http://blog.jobbole.com/)一群志同道合的小伙伴也在翻译Web Fundamentals，而且已经有三十多篇文章的产出。与伯乐在线翻译负责人@黄利民沟通后，我决定参与其中，共同完成这个振奋人心的工作，希望更多小伙伴阅读Web Fundamentals并从中受益。
+Web Fundamentals是非常好的跨终端WEB学习教程，翻译这系列教程的初衷是作为团队新入职的童鞋和实习生的新人Landing教程。幸运的是[伯乐在线](http://blog.jobbole.com/)一群志同道合的小伙伴也在翻译Web Fundamentals，而且已经有三十多篇文章的产出。与伯乐在线翻译负责人@黄利民沟通后，我决定共同合作，完成这个振奋人心的工作，希望更多小伙伴阅读Web Fundamentals并从中受益。
 
 Web Fundamentals还会有很多英文原文陆续出炉，我们的翻译需要更多有志之士参与其中，有意者请Q我（490483792，备注：翻译Web Fundamentals）。
+
+翻译好的文章会定期更新到[study.f2e.me](http://study.f2e.me/)与[伯乐在线](http://blog.jobbole.com/)供大家浏览。
 
 翻译问题汇总
 -----------
