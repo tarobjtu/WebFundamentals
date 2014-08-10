@@ -1,11 +1,11 @@
 ---
 layout: article
-title: "How Ads Work"
-description: "At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads."
-introduction: "At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads."
+title: "广告如何运作"
+description: "在你的网站上腾出空间（也叫广告位）给广告。以竞价的方式，出最高价的广告商才能在你的网站上投放广告。当用户点击这些广告的时候，你就获得了广告费。"
+introduction: "在你的网站上腾出空间（也叫广告位）给广告。以竞价的方式，出最高价的广告商才能在你的网站上投放广告。当用户点击这些广告的时候，你就获得了广告费。"
 article:
   written_on: 2014-07-31
-  updated_on: 2014-07-31
+  updated_on: 2014-08-06
   order: 1
 id: how-ads-work
 collection: ads
@@ -15,78 +15,65 @@ rel:
   twitterauthor: "@petele"
 key-takeaways:
   tldr: 
-    - Choose the ads platform best suited to your site. We recommend the <a href="http://www.google.com/adsense/start/">AdSense</a> platform for most sites, and the <a href="http://www.google.com/doubleclick/publishers/">DoubleClick platform</a> for sites with their own advertising teams.
-    - Ads work best when they integrate nicely in your site; their color, content, size, and location enhance user experience. 
-    - Users click on ads that are relevant to the content they are looking for; understand how ads targeting works so that you can maximize your revenue.
+    - 选择最适合你的网站的广告平台。我们为大多数网站推荐  <a href="http://www.google.com/adsense/start/">AdSense</a>，为拥有自己的广告团队的网站推荐 <a href="http://www.google.com/doubleclick/publishers/">DoubleClick platform</a>。
+    - 广告漂亮地植入到你的网站中时效果最佳；好的颜色、内容、大小和位置都能加强用户体验。    
+    - 用户会点击和他们寻找中的内容相关的广告; 理解广告投放的原理以获得最大化的收益。
 notes:
   placement:
-    - Understanding how ad targeting works can help you to maximize your revenue.
-  targeting:
-    - If you'd like to display ads related to specific topics, include complete sentences and paragraphs about these topics.
+    - 理解广告投放的原理以获得最大化的收益。
+  targeting:    
+    - 如果你想展示和特殊话题相关的的广告的话，要包含完与这些话题相关的完整的描述。
 ---
 
 {% wrap content %}
 
-This guide covers the basics of how ads work,
-but to learn more, refer to the
-<a href="https://support.google.com/adsense/answer/181947">Google AdSense</a> and
-<a href="https://support.google.com/dfp_sb/?utm_medium=et&utm_source=dfp_sb_support_tab&utm_campaign=dfp_sb#topic=13148">Google DoubleClick</a>
-help centers.
+这个指南覆盖了广告运作的原理，要了解更多则请参阅 <a href="https://support.google.com/adsense/answer/181947">Google AdSense</a> 和
+<a href="https://support.google.com/dfp_sb/?utm_medium=et&utm_source=dfp_sb_support_tab&utm_campaign=dfp_sb#topic=13148">Google DoubleClick</a> 帮助中心。
+
+请注意：您可能需要关闭浏览器的广告屏蔽拓展如 AdBlock 才能完整的看到本文的广告示例。
 
 {% include modules/toc.liquid %}
 
 {% include modules/takeaway.liquid list=page.key-takeaways.tldr %}
 
-## Choose the best ads platform for your site
+## 选择最适合你的网站的广告平台
 
-There are many ad serving platforms available, and choosing the one that
-is right for you is important. We recommend the
-[Google AdSense platform](http://www.google.com/adsense/start/)
-for most sites; it's free use and available to almost any site. The [DoubleClick platform](https://www.google.com/doubleclick/publishers/)
-is best for sites with their own advertising teams.
+在众多的广告服务平台中选择一个适合你的很重要。我们为大多数网站推荐 [Google AdSense platform](http://www.google.com/adsense/start/) ，它是免费的且对所有网站都可用。而拥有自己的广告团队的网站则推荐 [DoubleClick platform](https://www.google.com/doubleclick/publishers/) 。
 
 ### AdSense
 
-Google AdSense is a free, simple way for sites of all sizes to earn money by 
-displaying targeted ads. AdSense shows ads that are relevent to your users
-with automatic targeting.  You do not need to manage inventory or advertiser
-relatioships, AdSense gives you instant and automatic access to a huge source
-of advertiser demand.
+Google AdSense 对于通过展示针对性广告的各式网站来说都是一种免费、简单的选择。AdSense 使用自动投放的方式显示和你的用户相关的广告。
+你无须管理广告位或广告商的关系，AdSense 让你可以及时和立即获取到庞大的广告需求资源。
 
-AdSense also provides you with the tools you need to be successful, including:
+AdSense 同时也给你提供了一些有用的工具，包括：
 
-* Complete [customization tools](https://support.google.com/adsense/answer/160374) to change the look and feel of your ads.
-* [Performance tools](https://support.google.com/adsense/answer/2973289) to monitor and optimize your ad performance.
-* Tools to [manage payments](https://support.google.com/adsense/answer/2569265).
+* 完善的 [定制化工具](https://support.google.com/adsense/answer/160374) 帮你改善你的广告的样式和体验。
+* [性能工具](https://support.google.com/adsense/answer/2973289) 帮助监控和优化你的广告性能。
+* [管理付费](https://support.google.com/adsense/answer/2569265) 的工具 。
 
-In addition, AdSense provides the ability to choose from a variety of ad 
-sizes and formats, including
-[responsive ads](https://support.google.com/adsense/answer/3213689) that serve
-the right sized ad for responsive sites.
+此外，AdSense 还提供了各式各样的广告尺寸和格式，包括在响应式网站上提供正确尺寸 [响应式广告](https://support.google.com/adsense/answer/3213689) 
 
 
-### DoubleClick for Publishers
+### DoubleClick Platform
 
-DoubleClick for Publishers is an ad management platform that helps sites 
-sell, schedule, deliver, and measure all of their ad inventory. Sites can
-reserve some, or all of their inventory for ads from their own dedicated
-advertising sales teams or auction-based services like AdSense or AdExchange.
+DoubleClick Platform 是一个帮助网站销售、计划、交付并计算他们的广告资源的管理平台。
+网站能从他们自己专门的广告销售团队或以拍卖为基础的服务如 AdSense 或 AdExchange 中储备一些或全部的广告资源。
 
-## Get the most from your ads
 
-### Ad placement
-Place ads where they are visible, but don't detract from the main user experience. 
+## 从你的广告中获得最大的收益
+
+### 广告位置
+
+把广告放置在可见的地方，但不要影响到用户体验。
 
 <img src="images/mobile_ads_placement.png" alt="Common examples of where to place mobile ads">
 
-For example, 320&times;100px ads may be interspersed through list content, articles may
-include a 300&times;250px ads, and long form content may include a combination
-of ads.  Refer to [Best practices for ad placement](https://support.google.com/adsense/answer/1282097)
-in the AdSense help for further details. 
+举个栗子，320&times;100px 的广告适合通过列表的形式来展现，文章可能会包含 300&times;250px 的广告，长表单的内容则可能包含这些广告的集合。
+参阅 [广告位置的最佳实践](https://support.google.com/adsense/answer/1282097) 了解更多。
 
-### Ad size
-For the most flexibility, use responsive ads. Responsive ads are automatically
-sized based on the user's device. 
+### 广告尺寸
+
+使用响应式广告以获得最大的灵活性。响应式广告会基于用户的设备自动调整尺寸。
 
 <img src="images/ad-ss-600.png" 
   srcset="images/ad-ss-1200.png 1200w, 
@@ -95,46 +82,36 @@ sized based on the user's device.
           images/ad-ss-300.png 300w" 
   alt="Sample website with ads on desktop and mobile">
 
-It may be necessary to use staticly sized ads, in this case, refer to
-the [Guide to ad sizes](https://support.google.com/adsense/answer/6002621).
+有时需要使用固定尺寸的广告，在这种情况下请参与 [Guide to ad sizes](https://support.google.com/adsense/answer/6002621)。
 
 
-### Ad type
-To maximize the ad inventory available to you, be sure to choose both
-text and display ads.
+### 广告类型
+
+确保同时选择了文本和图片广告，以最大化可用的广告位。
 
 <img src="images/mobileimage.png">
 
-### Ad style
-In many cases, you have control over the color, font, and font-sizing for 
-text ads. Choose styles that match or contrast the styles on your site. 
+### 广告样式
+
+很多情况下你可以为文本广告控制颜色、字体和字体大小 。
+选择和你的网站样式匹配或对比的广告样式。
 
 <img src="images/mobiletext_withcolor.png">
 
-For example, you can change the color of URL text so that users see clearly
-where the link will take them.
+举个栗子，你可以改变文本的链接颜色让用户能够清楚的知道链接会将他们带到哪里。
 
 
-## How ads are targeted
-Google AdSense automatically delivers ads that are [targeted to your content 
-or audience](https://support.google.com/adsense/answer/9713).
-This is done in several ways:
+## 如何投放广告
 
-* **Content and language** - users will see ads that match your site's content
-and language.
-* **Placement** - advertisers can target sites that have ad units placed 
-where they want their ads to appear, and matched to the size they want their 
-ads to be displayed in on targeted devices.
-* **User's interest** - your website and advertisers can target specific user 
-groups, for example, sports enthusiasts.
+Google AdSense 会自动投放 [和你的内容或用户相关](https://support.google.com/adsense/answer/9713) 的广告，这通过以下几种方式来完成：
 
+* **内容和语言** - 用户会看到和你的网站内容和语言相匹配的广告。
+* **广告位** - 广告商能在提供了广告位的网站上投放广告，且这些广告能在不同的设备上响应式地显示。
+* **用户兴趣** - 你的网站和广告商能向一些特定的用户群（如运动爱好者）针对性地投放广告。
 
-## How ads are selected
-The [ad auction](https://support.google.com/adsense/answer/160525)
-is used to select the ads that will appear on your pages and determine how
-much you’ll earn from those ads. In a traditional auction, interested bidders 
-state the maximum price they're willing to pay to buy a specific item. 
-Similarly, our ad auction allows advertisers to state the price they're 
-willing to pay for clicks on ads or for impressions served on AdSense pages.
+## 如何挑选广告
+[广告拍卖](https://support.google.com/adsense/answer/160525) 用于选择出现在你网站上的广告，以及决定你从那些广告中获得多少回报。
+在传统的拍卖中，感兴趣的投标人会告诉你他们为一个关键词能支付的最大价格。
+同理，我们的广告拍卖允许广告商告诉你他们为一个广告点击能支付的最大价格，或者服务在 AdSense 页面上的最大价格。
 
 {% endwrap %}
