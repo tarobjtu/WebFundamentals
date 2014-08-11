@@ -1,6 +1,8 @@
 ---
 layout: article
 title: "设置视口"
+translator: "朱建奇"
+reviewer: "祁涛"
 description: "Much of the web isn't optimized for those multi-device experiences. Learn the
              fundamentals to get your site working on mobile, desktop or anything else with a screen."
 introduction: "针对设备优化的页面需要在文档头部加上meta视口元素，视口标签可以告诉浏览器网页的纬度和缩放程度是什么。"
