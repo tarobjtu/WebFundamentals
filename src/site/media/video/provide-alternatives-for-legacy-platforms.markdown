@@ -3,6 +3,8 @@ layout: article
 title: "传统平台的替代品"
 description: "并不是所有平台都支持所有的视频格式，检查一下主流平台所支持的视频格式，并且确保你的视频在这些主流平台中都可以运行。"
 introduction: "并不是所有平台都支持所有的视频格式，检查一下主流平台所支持的视频格式，并且确保你的视频在这些主流平台中都可以运行。"
+translator: <a href="http://blog.jobbole.com/author/huanglimin/" target="_blank">黄利民</a>
+reviewer: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
 article:
   written_on: 2014-04-16
   updated_on: 2014-08-01

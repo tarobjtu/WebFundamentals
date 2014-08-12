@@ -4,6 +4,8 @@ title: "可访问性很重要"
 description: " 可访问性不是一个特性。"
 introduction: "可访问性不是一个特性。缺少了字幕和描述，有视力或听力障碍的用户根本无法去了解一个视频。相比糟糕的用户体验，
                添加此类内容花费的时间不算什么。所以，为所有用户都提供一个基本的用户体验吧。"
+translator: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
+reviewer: （待校正）
 article:
   written_on: 2014-04-16
   updated_on: 2014-08-01
