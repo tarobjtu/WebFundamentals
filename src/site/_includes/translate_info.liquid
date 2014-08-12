@@ -1,4 +1,4 @@
 <dl class="translate-info">
-  <dt>译者：</dt><dd>{{page.translator}}</dd>
-  <dt>校正：</dt><dd>{{page.reviewer}}</dd>
+  <dt>译者：</dt><dd>{% if page.translator %}{{page.translator}}{% else %}（待翻译）{% endif %}</dd>
+  <dt>校正：</dt><dd>{% if page.reviewer %}{{page.reviewer}}{% else %}（待校正）{% endif %}</dd>
 </dl>
