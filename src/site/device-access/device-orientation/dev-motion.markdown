@@ -1,6 +1,8 @@
 ---
 layout: article
-title: "设备运动传感系统"
+title: "运动传感系统"
+translator: <a href="http://lison.sinaapp.com" target="_blank">李昕</a>
+reviewer: （待校正）
 description: "设备运动传感系统能够设定的场景下将设备的运动状态返回给我们，包括设备运动加速度和转速。"
 introduction: "设备运动传感系统能够设定的场景下将设备的运动状态返回给我们，包括设备运动加速度和转速。"
 article:
@@ -42,7 +44,7 @@ key-takeaways:
 
 {% include_code _code/jump-test.html devmot javascript %}
 
-## 如何处理事件所提供的数据数据
+## 如何处理事件所提供的数据
 
 设备运动事件会在有规律的时间间隔上被触发并返回设备的转速（单位：&deg;/s）和运动加速度（单位：m/s<sup>2</sup>）。需要注意，部分设备由于硬件受限无法返回除去重力加速外的加速度。
 

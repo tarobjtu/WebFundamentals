@@ -1,28 +1,30 @@
 ---
 layout: article
-title: "Customize Your Ads"
-description: "The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads."
-introduction: "The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads."
+title: "个性化定制广告"
+translator: <a href="http://lison.sinaapp.com" target="_blank">李昕</a>
+reviewer: （待校正）
+description: "好的广告往往能够改善用户体验。但广告内容来源于各式各样的厂商，而他们提供的内容也是各不相同；因此需要对广告的类型、颜色、大小以及位置有全面地把控。"
+introduction: "好的广告往往能够改善用户体验。但广告内容来源于各式各样的厂商，而他们提供的内容也是各不相同；因此需要对广告的类型、颜色、大小以及位置有全面地把控。"
 article:
   written_on: 2014-07-31
-  updated_on: 2014-07-31
+  updated_on: 2014-08-12
   order: 3
 id: customize-ads
 collection: ads
 key-takeaways:
-  tldr: 
-    - Never place ads where they might interfere with a user's intended experience on your site; ensure ads above the fold don't push important content below it.
-    - Always use responsive ad units; if smart sizing isn't enough, switch to advanced mode.
-    - Maximize revenue by allowing text and display images to compete for your ad space.
-    - Look for opportunities to integrate ads throughout the content to avoid ad blindness.
-    - Choose text styles that blend, compliment, or contrast your site.
+  tldr:
+    - 绝对不要将广告放置在可能影响用户使用习惯的位置；确保广告在页面中所处的位置不会影响主体内容。
+    - 尽量使用响应式的广告模块；如果智能大小变化仍无法满足需要，可以使用高级模式。
+    - 充分利用广告位置，使其填满广告文字和图片，使得利益最大化。
+    - 合理地在内容中穿插广告提高广告的曝光率。
+    - 选择能够是网站整体形成良好混搭、衬托和对比的文字样式。
 notes:
   targeting:
     - Ads are targeted based on overall site content, not keywords or categories. If you'd like to display ads related to specific topics, include complete sentences and paragraphs about these topics.
   testing:
-    - Always test your ads on different devices and screens to make sure that the responsive behavior is working correctly.
+    - 无论何时都要记得在各种设备和不同尺寸屏幕上测试广告模块，以确保响应式正常工作。
   images:
-    - Advertisers have full control over how their display ads look. You can influence the types of display ads that appear on your site using ad placement and sizing, but you can't actually control the image content.
+    - 广告提供商有权利决定广告长成什么样。你所能做的只是选择什么样类型的广告以及广告的位置和大小，但你无法控制广告的内容。
 ---
 
 {% wrap content %}
@@ -39,38 +41,27 @@ notes:
 
 {% include modules/takeaway.liquid list=page.key-takeaways.tldr %}
 
-## Place ads where users benefit the most
+## 将广告放置在最能让用户接受的位置
 
-When it comes to deciding where to place ads on your site,
-and how many ads to include, always put the user first!
+当我们在考虑如何放置广告以及放置广告的数量时，用户是我们首要考虑的因素！
 
-* Use ads to augment site content; not the other way around.
-* Pages with excessive ads, ads that push important content down below the fold, 
-ads clustered together that dominate the viewable space or ads without clear 
-labeling lead to lower user satisfaction and are against AdSense policies.
-* Ensure ads provide value to users. If you have ad units that generate 
-significantly less revenue or drive less clicks or views, it’s likely they 
-are not providing value to users.
+* 广告只能是对原内容的扩充，绝对不可以是其他形式。
+* 页面中存在影响主体内容展示、占据用户主要的视觉感知空间或是没有清楚明确的广告标签的广告都会影响用户使用网站的满意度同时这些方式也违背了AdSense的广告策略。
+* 确保广告有利于用户。如某广告模块产生的利润少的可怜或是导致了页面访问量、点击量下降，我们就可以认为这些广告对于用户毫无价值。
 
-Sample placement options for mobile ads:
+下面是如何在移动设备上安排广告位置的案例：
 
 <img src="images/mobile_ads_placement.png" class="center" alt="Sample mobile image ad">
 
-For more information, review the AdSense 
-[best practices for ads placement](https://support.google.com/adsense/answer/1282097).
+如果想了解更多，欢迎访问AdSense[关于如何安排广告位置的最佳实践经验](https://support.google.com/adsense/answer/1282097)。
 
 
-## What if responsive sizing isn't enough?
-In some cases, you may need more control over the way your ads are displayed
-than simply using responsive ads.  In this case, you can switch 
-to advanced mode and override smart sizing in your responsive ad unit code. 
-For example, you can control the exact sizing of ads using
-[media queries]({{site.baseurl}}/layouts/rwd-fundamentals/use-media-queries.html):
+## 如何应对响应式布局中广告空间不够？
+在某些场景下，在处理广告模块时需要考虑的不仅仅是将其实现响应式展示。此时，你可以考虑使用高级模式替代响应式广告。例如使用GoogleAdSense提供的[媒体检索]({{site.baseurl}}/layouts/rwd-fundamentals/use-media-queries.html)实现对广告内容大小的精确控制：
 
-1. Follow the instructions to [create a responsive ad unit]({{site.baseurl}}/monetization/ads/include-ads.html#create-ad-units).
-2. In the Ad code box, select the <strong>Advanced (code modification required)</strong>
-from the Mode drop-down.
-3. Modify the ad code to set the exact sizes of your ads based on the user's device:
+1. 按照说明开发常见的响应式广告单元。
+2. 在Ad的代码生成器中，选择高级模式。
+3. 根据实际使用场景中广告模块的尺寸填入准确的大小参数:
 
 {% highlight html %}
 <style type="text/css">
@@ -87,64 +78,50 @@ from the Mode drop-down.
 {% endhighlight %}
 
 {% link_sample _code/customize.html %}
-  Try it
+  试一试
 {% endlink_sample %}
 
-See [advanced features](https://support.google.com/adsense/answer/3543893) in the AdSense help for more information.
+查看[高级功能](https://support.google.com/adsense/answer/3543893)
 
 {% include modules/remember.liquid title="Important" list=page.notes.testing %}
 
-## Maximize bidding potential
+## 最大程度地挖掘广告位的议价潜力
 
-The higher the competition, or 'auction pressure', the more the advertiser 
-will pay to be viewed and clicked on your site. To maximize your bidding
-potential:
+网站的广告位越具有竞争力，广告商也更愿意花钱投放。如何最大程度地挖掘广告位的议价能力呢：
 
-* Be sure to allow both [text](https://support.google.com/adsense/answer/185665)
-and [display ads](https://support.google.com/adsense/answer/185666). Excluding
-one type of ads limits the number of advertisers available to you.
-* Use ad sizes that are popular with advertisers, for example, 300px by 250px
-(see also the [Guide to ad sizes](https://support.google.com/adsense/answer/6002621)).
+* 确保广告位同时能够承载文字或是图片。排除任意一种方式就等于限制了能够购买你的广告位的广告商。
+* 尽量使用常见的尺寸来设计广告位，例如300px或是250px（参考[广告尺寸手册](https://support.google.com/adsense/answer/6002621)）。
 
-## Choose styles that compliment your site
+## 选择能够兼容网页风格的样式
 
-The [most successful ads](https://support.google.com/adsense/answer/17957)
-blend or contrast your site's styles. Google AdSense provides a set of 
-[predefined ad styles](https://support.google.com/adsense/answer/6002585);
-choose the style that best fits your site or create your own.
+[好的广告](https://support.google.com/adsense/answer/17957)模块能够很好地衬托原来的站点风格。Google AdSense提供了[系列广告样式](https://support.google.com/adsense/answer/6002585)；选择最适合你的网站的部分进行整合。
 
-### What's customizable
+### 什么叫可定制化
 
-You can customize any of the following styles in text ads:
+你可以对文字广告模块进行自定义，包括下面这些样式：
 
 * Border color
 * Background color
-* Text font family and font size
-* Default text color
-* Text color specific for the ad title
-* Text color specific for URLs
+* 文字的 font family 和 font size
+* 默认的文字 color
+* 广告标题的文字 color
+* 链接文字的 color
 
-### How to apply styles
+### 如何使用样式
 
-When creating a new unit, you can apply a different style to text ads by 
-expanding the <strong>Text ad style</strong> property:
+当你在创建新的广告模块时，可以展开<strong>文字广告的样式</strong>属性进行配置：
 
 <img src="images/customize.png" class="center" alt="Text ad styles">
 
-All text ads use the Google AdSense <strong>Default</strong> style.  You can 
-use any of the predefined style as is, make slight changes to the style,
-or create, your own custom style.
+所有文字使用的是Google AdSense的<strong>默认</strong>字体。当然你可以使用自定义的样式。
 
-Once you've saved a new style, you can apply it to any of your existing or 
-new ad units:
+当你创建了一份自定义的样式，就可以将它应用于原有或是新建的广告模块：
 
-1. Navigate to [Ad Styles](https://www.google.com/adsense/app#myads-springboard/view=AD_STYLES).
-2. Select the ad style you want to change from the list of 
-<strong>Ad styles available for all your active products</strong>.
-3. Make changes and <strong>Save ad style</strong>.
+1. 切换到[Ad Styles](https://www.google.com/adsense/app#myads-springboard/view=AD_STYLES)。
+2. 从<strong>可选的样式列表</strong>中选择你需要的样式。
+3. 对样式代码进行修改并<strong>保存</strong>。
 
-When you change an existing ad style, any active ad units using that style 
-are automatically updated.
+当你修改了已存在的样式，任何关联了这份样式的广告模块的样式都会被更新。
 
 {% include modules/remember.liquid title="Note" list=page.notes.images %}
 
