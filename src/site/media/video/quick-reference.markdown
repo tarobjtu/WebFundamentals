@@ -3,7 +3,7 @@ layout: article
 title: "视频元素快速参考"
 description: "简要概述了视频元素上的属性"
 introduction: "简要概述了视频元素上的属性"
-translator: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
+translator: <a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>
 reviewer: （待校正）
 article:
   written_on: 2014-04-16
