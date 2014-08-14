@@ -1,7 +1,7 @@
 safe: false
 port: 8081
 source: site
-destination: appengine/build/static
+destination: appengine/webroot
 markdown: kramdown
 permalink: /articles/:title.html
 baseurl: ''

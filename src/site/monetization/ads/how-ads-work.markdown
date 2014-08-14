@@ -1,6 +1,8 @@
 ---
 layout: article
 title: "广告如何运作"
+translator: ""
+reviewer: ""
 description: "在你的网站上腾出空间（也叫广告位）给广告。以竞价的方式，出最高价的广告商才能在你的网站上投放广告。当用户点击这些广告的时候，你就获得了广告费。"
 introduction: "在你的网站上腾出空间（也叫广告位）给广告。以竞价的方式，出最高价的广告商才能在你的网站上投放广告。当用户点击这些广告的时候，你就获得了广告费。"
 article:
@@ -14,14 +16,14 @@ rel:
   gplusauthor: https://plus.google.com/110573989653316535297
   twitterauthor: "@petele"
 key-takeaways:
-  tldr: 
+  tldr:
     - 选择最适合你的网站的广告平台。我们为大多数网站推荐  <a href="http://www.google.com/adsense/start/">AdSense</a>，为拥有自己的广告团队的网站推荐 <a href="http://www.google.com/doubleclick/publishers/">DoubleClick platform</a>。
-    - 广告漂亮地植入到你的网站中时效果最佳；好的颜色、内容、大小和位置都能加强用户体验。    
+    - 广告漂亮地植入到你的网站中时效果最佳；好的颜色、内容、大小和位置都能加强用户体验。
     - 用户会点击和他们寻找中的内容相关的广告; 理解广告投放的原理以获得最大化的收益。
 notes:
   placement:
     - 理解广告投放的原理以获得最大化的收益。
-  targeting:    
+  targeting:
     - 如果你想展示和特殊话题相关的的广告的话，要包含完与这些话题相关的完整的描述。
 ---
 
@@ -51,7 +53,7 @@ AdSense 同时也给你提供了一些有用的工具，包括：
 * [性能工具](https://support.google.com/adsense/answer/2973289) 帮助监控和优化你的广告性能。
 * [管理付费](https://support.google.com/adsense/answer/2569265) 的工具 。
 
-此外，AdSense 还提供了各式各样的广告尺寸和格式，包括在响应式网站上提供正确尺寸 [响应式广告](https://support.google.com/adsense/answer/3213689) 
+此外，AdSense 还提供了各式各样的广告尺寸和格式，包括在响应式网站上提供正确尺寸 [响应式广告](https://support.google.com/adsense/answer/3213689)
 
 
 ### DoubleClick Platform
@@ -75,11 +77,11 @@ DoubleClick Platform 是一个帮助网站销售、计划、交付并计算他�
 
 使用响应式广告以获得最大的灵活性。响应式广告会基于用户的设备自动调整尺寸。
 
-<img src="images/ad-ss-600.png" 
-  srcset="images/ad-ss-1200.png 1200w, 
+<img src="images/ad-ss-600.png"
+  srcset="images/ad-ss-1200.png 1200w,
           images/ad-ss-900.png 900w,
-          images/ad-ss-600.png 600w, 
-          images/ad-ss-300.png 300w" 
+          images/ad-ss-600.png 600w,
+          images/ad-ss-300.png 300w"
   alt="Sample website with ads on desktop and mobile">
 
 有时需要使用固定尺寸的广告，在这种情况下请参与 [Guide to ad sizes](https://support.google.com/adsense/answer/6002621)。
