@@ -1,19 +1,14 @@
 ---
 layout: article
 title: "Off canvas"
-description: "Responsive web design patterns are quickly evolving, but there
-              are a handful of established patterns that work well across the
-              desktop and mobile devices"
-introduction: "Rather than stacking content vertically, the off canvas pattern places less
-  frequently used content, perhaps navigation or app menus off screen, only
-  showing it when the screen size is large enough, and on smaller screens, content
-  is only a click away."
+description: "响应式Web设计模式发展地很快，但总有一些已有的模式在跨终端方面工作得很好。"
+introduction: "与垂直排列内容不同，off canvas 模式将不常用的内容（也许是导航或屏幕外的菜单）只在大屏幕情况下显示，而在小屏幕下只显示主要内容。"  
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-04-30
+  updated_on: 2014-08-24
   order: 5
 collection: rwd-patterns
 ---
@@ -22,20 +17,20 @@ collection: rwd-patterns
 
 {% link_sample _code/off-canvas.html %}
   <img src="imgs/off-canvas.svg">
-  Try it
+  试一试
 {% endlink_sample %}
 
-Rather than stacking content vertically, this sample hides two of the content
-`div`s off screen by using a `transform: translate(-250px, 0)`.  JavaScript is used
-to show the divs by adding an open class to the element to make visible.  As the
-screen gets wider, the off-screen positioning is removed from the elements and
-they're shown within the visible viewport.
 
-Note in this sample, Safari for iOS 6 and Android Browser do not support the
-`flex-flow: row nowrap` feature of `flexbox`, so we’ve had to fallback to
-absolute positioning.
+与垂直排列内容不同，这个示例中通过 `transform: translate(-250px, 0)` 隐藏了两个内容 `div`。
 
-Sites using this pattern include:
+通过使用 JavaScript 添加或删除样式来显示或隐藏内容。
+
+当屏幕变得更宽时，会移除将元素设置为屏幕外的样式，将内容显示在可视范围内中。
+
+注意：在这个示例中，iOS 6 中的 Safari 浏览器和 Android 浏览器并不支持 `flexbox`  的 `flex-flow: row nowrap` 属性，
+所以我们必须使用绝对定位的方式。
+
+使用这种设计模式的网站包括：
 
  * [HTML5Rocks
   Articles](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/)
