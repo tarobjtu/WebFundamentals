@@ -2,7 +2,7 @@
 layout: article
 title: "Layout shifter"
 description: "响应式Web设计模式发展地很快，但总有一些已有的模式在跨终端方面工作得很好。"
-introduction: "layout shifter 在多断点的情况下是最好的模式。"   
+introduction: "Layout shifter 在多断点的情况下是最好的模式。"   
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
