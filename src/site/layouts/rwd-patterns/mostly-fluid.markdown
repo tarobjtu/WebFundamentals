@@ -1,18 +1,14 @@
 ---
 layout: article
 title: "Mostly fluid"
-description: "Responsive web design patterns are quickly evolving, but there
-              are a handful of established patterns that work well across the
-              desktop and mobile devices"
-introduction: "The mostly fluid pattern consists primarily of a fluid grid.  On large or medium
-  screens, it usually remains the same size, simply adjusting the margins on wider
-  screens."
+description: "响应式Web设计模式发展地很快，但总有一些已有的模式在跨终端方面工作得很好。"
+introduction: "大多数的流式模式由流式网格构成。在中等或大点的屏幕中总是具有相同的尺寸，而在更大屏幕中才会调整边距。"  
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-04-30
+  updated_on: 2014-08-24
   order: 1
 collection: rwd-patterns
 ---
