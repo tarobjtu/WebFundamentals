@@ -15,22 +15,22 @@ collection: rwd-patterns
 
 {% wrap content%}
 
-On smaller screens, the fluid grid causes the main content to reflow,
-while columns are stacked vertically.  One major advantage of this pattern is
-that it usually only requires one breakpoint between small screens and large
-screens.
+在小点的屏幕中， 当列内容变成垂直排列时，fluid grid 模式会导致主内容区域的重新流动。
+
+这个模式的主要特点是它只需要在小屏幕和大屏幕之间设置一个断点。
 
 {% link_sample _code/mostly-fluid.html %}
   <img src="imgs/mostly-fluid.svg">
-  Try it
+  试一试
 {% endlink_sample %}
 
-In the smallest view, each content `div` is stacked vertically.  Once the screen
-width hits 600px, the primary content `div` remains at `width: 100%`, while the
-secondary `div`'s are shown as two columns below the primary `div`.  Beyond
-800px, the container `div` becomes fixed width and is centered on the screen.
+在最小的屏幕中，每个内容 `div` 都垂直排列。
 
-Sites using this pattern include:
+当屏幕宽度达到 600px 时，主内容 `div` 保持 100% 的宽度，而下面两个 `div` 则位于第一个div下方，如图所示。
+
+当屏幕宽度超过 800px 时， 主内容 `div` 则固定宽度并在屏幕上居中。
+
+使用这种设计模式的网站有：
 
  * [A List Apart](http://mediaqueri.es/ala/)
  * [Media Queries](http://mediaqueri.es/)
