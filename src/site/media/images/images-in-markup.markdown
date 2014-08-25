@@ -3,6 +3,8 @@ layout: article
 title: "带标签的图片"
 description: "<code>img</code> 元素十分强大 – 它能够下载，解析并渲染内容 – 且现代浏览器支持多种图像格式。引入能够跨设备的图像，与放置专为桌面浏览器定制的图像没什么不同，只需要几个小调整就能有很好的体验。"
 introduction: "<code>img</code> 元素十分强大 – 它能够下载，解析并渲染内容 – 且现代浏览器支持多种图像格式。引入能够跨设备的图像，与放置专为桌面浏览器定制的图像没什么不同，只需要几个小调整就能有很好的体验。"
+translator: '<a href="http://blog.jobbole.com/author/aimujie/" target="_blank">埃姆杰</a>、<a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>'
+reviewer: '<a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>'
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"

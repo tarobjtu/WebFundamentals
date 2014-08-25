@@ -3,7 +3,7 @@ layout: article
 title: "自定义视频播放器"
 description: " 不同平台播放视频的方式不同。移动平台的解决方案需要考虑设备的方向（横向或者纵向视图）。使用全屏API来控制视频内容的全屏视图。"
 introduction: "不同平台播放视频的方式不同。移动平台的解决方案需要考虑设备的方向（横向或者纵向视图）。使用全屏API来控制视频内容的全屏视图。"
-translator: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
+translator: <a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>
 reviewer: （待校正）
 article:
   written_on: 2014-04-16

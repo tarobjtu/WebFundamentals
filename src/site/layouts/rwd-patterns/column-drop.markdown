@@ -1,41 +1,36 @@
 ---
 layout: article
 title: "Column Drop"
-description: "Responsive web design patterns are quickly evolving, but there
-              are a handful of established patterns that work well across the
-              desktop and mobile devices"
-introduction: "For full-width multi-column layouts, column drop simply stacks the columns
-  vertically as the window width becomes too narrow for the content.  "
+description: "响应式Web设计模式发展地很快，但总有一些已有的模式在跨终端方面工作得很好。"
+introduction: "对于满屏多列的布局，使用column drop 模式时，当视窗宽度小于内容区域的宽度时，内容将垂直排列。"  
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-04-30
+  updated_on: 2014-08-24
   order: 2
 collection: rwd-patterns
 ---
 
 {% wrap content%}
 
-Eventually
-this results in all of the columns being stacked vertically.  Choosing
-breakpoints for this layout pattern is dependent on the content and will change
-for each design.
+这种模式最终会导致内容变成垂直排列。
+
+选择合适的断点取决于不同的内容及设计。
 
 {% link_sample _code/column-drop.html %}
   <img src="imgs/column-drop.svg">
-  Try it
+  试一试
 {% endlink_sample %}
 
+与 mostly fluid 设计模式的示例类似，内容在最小视图下将垂直排列。
 
-Like the mostly fluid sample, content is stacked vertically in the smallest
-view, but as the screen expands beyond 600px, the primary and secondary content
-`div`'s take the full width of the screen.  The order of the `div`'s is set using
-the order CSS property.  At 800px all three content `div`'s are shown, using the
-full screen width.
+而当屏幕宽度超过 600px 时，主内容和第二个内容 `div` 将占据了屏幕全部宽度。
 
-Sites using this pattern include:
+`div` 的顺序则根据 CSS 中的 order 属性排列。当宽度达到 800px 时，三个内容 `div` 一起出现，并占据屏幕的全部宽度。
+
+使用这种设计模式的网站包括：
 
  * [Modernizr](http://modernizr.com/)
  * [Wee Nudge](http://weenudge.com/)

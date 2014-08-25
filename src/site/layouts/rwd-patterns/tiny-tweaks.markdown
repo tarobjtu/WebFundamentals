@@ -1,35 +1,33 @@
 ---
 layout: article
 title: "Tiny tweaks"
-description: "Responsive web design patterns are quickly evolving, but there
-              are a handful of established patterns that work well across the
-              desktop and mobile devices"
-introduction: "Tiny tweaks simply makes small changes to the layout, such as adjusting font
-  size, resizing images or moving content around in very minor ways.  "
+description: "响应式Web设计模式发展地很快，但总有一些已有的模式在跨终端方面工作得很好。"
+introduction: "Tiny tweaks 模式会对布局做细微的改变，比如调整字体大小、缩放图片大小或者细微地移动内容。"  
 rel:
   gplusauthor: https://plus.google.com/+PeteLePage
   twitterauthor: "@petele"
 article:
   written_on: 2014-04-30
-  updated_on: 2014-04-30
+  updated_on: 2014-08-24
   order: 4
 collection: rwd-patterns
 ---
 
 {% wrap content%}
 
-It works well on single column layouts such as one page linear websites, text
-heavy articles.
+这种模式对于单列布局非常适合，比如单页面以文章为主的线性布局的网站。
+
 
 {% link_sample _code/tiny-tweaks.html %}
   <img src="imgs/tiny-tweaks.svg">
-  Try it
+  试一试
 {% endlink_sample %}
 
-As its name implies, little changes with this sample as the screen size changes.
-As the screen width gets larger, so do the font size and padding.
+顾名思义，屏幕尺寸改变时会导致示例的细微改变。
 
-Sites using this pattern include:
+当屏幕宽度变得越来越大时，字体和边距也跟着改变。
+
+使用这种设计模式的网站包括：
 
  * [Opera's Shiny Demos](http://shinydemos.com/)
  * [Ginger Whale](http://gingerwhale.com/)

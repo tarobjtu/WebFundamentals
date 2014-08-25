@@ -4,7 +4,7 @@ title: "添加视频文件"
 description: " 学习使用最简单的方法为你的网站添加视频，确保用户在任何设备上都能得到最佳的体验。"
 introduction: "学习使用最简单的方法为你的网站添加视频，确保用户在任何设备上都能得到最佳的体验。"
 translator: <a href="http://blog.jobbole.com/author/juanjuanguai/" target="_blank">卷卷怪</a>
-reviewer: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
+reviewer: <a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>
 article:
   written_on: 2014-04-16
   updated_on: 2014-07-31

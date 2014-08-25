@@ -4,7 +4,7 @@ title: "获取用户当前位置"
 introduction: "地理位置（Geolocation）API 能让你在用户允许情况下获取其位置信息。这个功能可以作为用户请求的一部分，
                比如导航用户到指定位置；也可以为用户生成的内容打上“位置标签”，比如标记照片的拍照位置。"
 description: " 地理位置（Geolocation）API 能让你在用户允许情况下获取其位置信息。"
-translator: <a href="http://crimx.com" target="_blank">黄杰华</a>
+translator: <a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>
 reviewer: （待校正）
 article:
   written_on: 2014-06-06

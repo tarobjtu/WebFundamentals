@@ -3,7 +3,7 @@ layout: article
 title: "正确调整视频大小"
 description: " 当关系到保持用户愉悦度时，视频大小就显得尤为重要了。"
 introduction: "当关系到保持用户愉悦度时，视频大小就显得尤为重要了。"
-translator: <a href="http://crimx.com" target="_blank">黄杰华（StrayBugs）</a>
+translator: <a href="http://crimx.com" target="_blank">黄杰华(StrayBugs)</a>
 reviewer: （待校正）
 article:
   written_on: 2014-04-16
