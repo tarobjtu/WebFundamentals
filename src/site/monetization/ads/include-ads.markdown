@@ -1,8 +1,10 @@
 ---
 layout: article
-title: "Include AdSense Ads on Your Site"
-description: "Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid."
-introduction: "Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid."
+title: "把广告引入你的网站"
+description: "跟着这篇教程里的步骤，你将学到如何将广告放入到你的网站中。
+这篇教程将按照以下这些步骤教会你如何在你的网站中放入广告。1. 创建AdSense账户。2. 创建广告单元。3. 将广告单元放到你的网站中。4. 配置你的支付设置。5. 盈利"
+introduction: "跟着这篇教程里的步骤，你将学到如何将广告放入到你的网站中。
+这篇教程将按照以下这些步骤教会你如何在你的网站中放入广告。1. 创建AdSense账户。2. 创建广告单元。3. 将广告单元放到你的网站中。4. 配置你的支付设置。5. 盈利"
 article:
   written_on: 2014-07-31
   updated_on: 2014-07-31
@@ -31,10 +33,9 @@ notes:
 
 {% include modules/takeaway.liquid list=page.key-takeaways.tldr %}
 
-## Build sample page with ads
+## 创建一个带有广告的示例页面
 
-In this walk-through, you'll build a simple page that includes responsive ads
-using Google AdSense and the Web Starter Kit:
+在这个引导中，你将使用Google AdSense 和Web Starter Kit 创建一个带有响应式广告的简单页面
 
 <img src="images/ad-ss-600.png" sizes="100vw" 
   srcset="images/ad-ss-1200.png 1200w, 
@@ -43,76 +44,53 @@ using Google AdSense and the Web Starter Kit:
           images/ad-ss-300.png 300w" 
   alt="Sample website with ads on desktop and mobile">
 
-If you're unfamiliar with the Web Start Kit, refer to the
-[Set Up Web Starter Kit]({{site.baseurl}}/tools/setup/setup_kit.html) documentation.
+如果你还不熟悉Web Start Kit， 请参考
+[Set Up Web Starter Kit]({{site.baseurl}}/tools/setup/setup_kit.html) 这篇文档。
 
-In order to include ads in your site and get paid, you'll need to follow these simple steps:
+为了将广告引入到你的网站中并盈利吗，你需要完成以下这些步骤：
 
-1. Create an AdSense account.
-2. Create ad units.
-3. Place ad units on a page.
-4. Configure payment settings.
+1. 创建一个AdSense 账号
+2. 创建广告单元
+3. 将广告单元放置到你的网站中
+4. 配置你的支付设置
 
-## Create an AdSense account
-In order to serve ads on your site, you'll need an active AdSense account. If
-you don't already have one, you'll need to [create one](https://www.google.com/adsense/) and agree to the
-AdSense terms of service.  When you create your account, you'll need to verify:
+## 创建AdSense 账号
+你需要一个激活的AdSense账号来为你网站上的广告提供支持。如果你现在还没有AdSense账号的话，你需要[创建一个账号](https://www.google.com/adsense/)并同意AdSense 的服务条款。创建账号的时候你需要确认以下这些内容：
 
-* You are at least 18 years old and have a verified Google Account.
-* You own a live website or other online content that complies with
-[Google AdSense program policies](https://support.google.com/adsense/answer/48182);
-ads are hosted on this site.
-* You have a postal address and a mailing address associated with your bank account
-so you can receive payments.
+* 你已满18岁并且拥有一个已验证的Google账号
+* 你拥有一个符合[Google AdSense 程序政策](https://support.google.com/adsense/answer/48182)的仍在运行的网站或者其他的在线内容，广告将被存放在这个网站。
+* 你有一个与你银行账号关联的邮寄地址和邮件地址，这样你才可以收到付款
 
-## Create ad units
+## 创建广告单元
 
-An ad unit is a set of ads that are displayed on your page as a result of 
-JavaScript you add to your page.  You have three options for sizing your ad
-units:
+广告单元是呈现在你网站上的一系列广告，当你将我们提供的Javascript代码放到你的页面里时，这些广告就会出现。你有三种可选的方式来控制广告单元的大小：
 
-* **[Responsive (Recommended)](https://support.google.com/adsense/answer/3213689)**. 
-* [Pre-defined](https://support.google.com/adsense/answer/6002621).
-* [Custom-sized](https://support.google.com/adsense/answer/3289364).
+* **[响应式(推荐的)](https://support.google.com/adsense/answer/3213689)**. 
+* [预定义](https://support.google.com/adsense/answer/6002621).
+* [自定义尺寸](https://support.google.com/adsense/answer/3289364).
 
-You are building a responsive site; use respoonsive ad units.
-Responsive ads automatically resize based on the size of the device
-and the width of the parent container.
-Responsive ads work in line with your responsive layout,
-ensuring your site looks great on any device.
+你正在创建一个响应式的网站，所以使用响应式的广告单元。响应式广告会根据设备的尺寸和父元素的宽度自动地调整自己的大小。响应式广告在你响应式布局的“行”中工作，确保你的网站在任何设备上都看起来很棒
 
-If you don't use responsive ad units, you will have to write a lot more code 
-to control how ads appear based on a user's device. Even if you must specify 
-the exact size of your ad units, use responsive ad units in 
-[advanced mode]({{site.baseurl}}/monetization/ads/customize-ads.html#what-if-responsive-sizing-isnt-enough).
+如果你不使用响应式的广告单元，你就需要写很多代码来控制广告在不同设备上显示的方式。即使你一定要明确规定广告单元的尺寸，你也可以使用响应式广告单元的[高级模式]({{site.baseurl}}/monetization/ads/customize-ads.html#what-if-responsive-sizing-isnt-enough)。
 
-To make your code simpler and save you time and effort,
-the responsive ad code automatically adapts the ad unit size to your page layout.
-The code calculates the required size dynamically based on the width of the ad unit’s parent container,
-then picks the best-performing ad size that fits in the container.
-For example, a mobile-optimized site with a width of 360px might show a 320x50 ad unit.
+为了让你的代码更加简单也为了节省你的时间和工作，响应式广告单元的代码会自动将广告单元适配到你的页面布局中。代码会依据父容器的尺寸动态地计算合适的尺寸，然后选出在这个容器中表现最好的尺寸。举个例子，在一个360px宽度的移动优先的网站理，会显示一个320x50的广告单元
 
-Track the current
-[top performing ad sizes](https://support.google.com/adsense/answer/6002621#top)
-in the Google AdSense
-[Guide to ad sizes](https://support.google.com/adsense/answer/6002621#top).
+去[Google AdSense 的广告尺寸说明](https://support.google.com/adsense/answer/6002621#top)中看一下目前
+[表现最佳的广告尺寸](https://support.google.com/adsense/answer/6002621#top)
 
-### To create a responsive ad unit
 
-1. Visit the [My ads tab](https://www.google.com/adsense/app#myads-springboard).
-2. Click <strong>+New ad unit</strong>.
-3. Give your ad unit a unique name. This name appears in the ad code that's
-pasted into your site, so be descriptive.
-4. Select <strong>Responsive</strong> from the Ad size drop-down.
-5. Select <strong>Text & display ads</strong> from the Ad type drop-down.
-6. Click <strong>Save and get code</strong>.
-7. In the <strong>Ad code</strong> box that appears, select the 
-<strong>Smart sizing (recommended)</strong> option from the Mode drop-down. 
-This is the recommended mode and doesn’t require you to make any changes to
-your ad code.
 
-After creating your ad unit, AdSense provide a snippet of code to include 
-on your site, similar to the code below:
+### 为了创建响应式的广告单元你需要
+
+1. 访问[My ads 标签](https://www.google.com/adsense/app#myads-springboard).
+2. 点击 <strong>+New ad unit</strong>.
+3. 给你的广告单元起一个名字，尽量把这个名字起的具有描述性，因为这个名字会出现在嵌入到页面中的代码里面
+4. 在选择广告尺寸的下拉菜单中选择<strong>响应式</strong>。
+5. 在广告类型下拉菜单中选择<strong>Text & display ads</strong>。
+6. 点击 <strong>Save and get code</strong>保存并获取代码。
+7. 在出现的<strong>广告代码</strong>盒子中，从模式下拉菜单中选择Smart sizing（推荐的）选项。这个模式是被推荐的模式，它不需要你在广告代码中做任何修改
+
+创建好广告单元以后，AdSense 提供一个用来嵌入到站点中的代码片段，类似于于下面这种形式
 
 {% highlight html %}
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -127,16 +105,14 @@ on your site, similar to the code below:
 </script>
 {% endhighlight %}
 
-{% include modules/remember.liquid title="Note" list=page.notes.smarttag %}
+{% include modules/remember.liquid title="小贴士" list=page.notes.smarttag %}
 
-## Include ad units in your site
+## 将广告单元引入到你的站点中
 
-To include the ad on the page, we need to paste the provided AdSense snippet
-into our markup.  If you want to include multiple ads, you can either 
-re-use the same ad unit, or create multiple ad units.
+为了把广告引入到页面中，我们需要提供给我们的广告代码片段粘贴到我们的html标记中。如果你想引入多个广告，你也可以重复使用同一个广告单元，或者创建多个广告单元。
 
-1. Open the `index.html` in the `app` folder.
-2. Paste the provided snippet into the `main` tag.
+1. 打开`app`文件夹中的`index.html`。
+2. 把提供的代码片段粘贴到`main`标签中。
 3. Save the file and try viewing it in your browser, then try opening it on a 
 mobile device or via the Chrome emulator.
 
@@ -155,19 +131,16 @@ mobile device or via the Chrome emulator.
   </a>
 </div>
 
-## Configure payment settings
+## 配置支付的设置
 
-Wondering when your AdSense payment will arrive? Trying to figure out whether
-you'll be paid this month or next month? Be sure you've completed all of
-the steps below:
+在想什么时候你的AdSense付款会到吗？在尝试搞清楚你会在这个月还是下个月收到付款？确保你完成了下面的步骤：
 
-1. Verify you've provided any required tax information in the [payee profile](https://www.google.com/adsense/app#payments3/h=BILLING_PROFILE). 
-2. Confirm your payee name and address are correct.
-3. Select your form of payment on the [Payment settings page](https://www.google.com/adsense/app#payments3/h=ACCOUNT_SETTINGS).
-4. Enter your [personal identification number (PIN)](https://support.google.com/adsense/answer/157667). This PIN verifies the accuracy of your account information.
-5. Check to see if your balance reaches the [payment threshold](https://support.google.com/adsense/answer/1709871). 
+1. 在[payee profile](https://www.google.com/adsense/app#payments3/h=BILLING_PROFILE)页面确认你已经提供了需要的税收信息
+2. 确认你的收款人姓名还有地址是正确的
+3. 在[支付设定页面](https://www.google.com/adsense/app#payments3/h=ACCOUNT_SETTINGS).选择你的收款形式
+4. 输入你的[个人认证密码(PIN)](https://support.google.com/adsense/answer/157667).。这个PIN确认你账户信息的准确性
+5. 检查你的余额是否达到了[支付的最低额](https://support.google.com/adsense/answer/1709871). 
 
-Refer to [Intro to AdSense payments](https://support.google.com/adsense/answer/1709858)
-for any additional questions.
+如果你还有什么其他问题的话，请参考[AdSense付款介绍](https://support.google.com/adsense/answer/1709858)
 
 {% endwrap %}
