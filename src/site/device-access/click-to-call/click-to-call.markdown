@@ -1,6 +1,8 @@
 ---
 layout: article
 title: "Click to call"
+translator: "转二"
+reviewer: "祁涛"
 description: "在具有电话功能的设备上，用户可以通过轻轻点击一串电话号码来方便地直接联系你，这功能被称作 Click to call。"
 introduction: "在具有电话功能的设备上，用户可以通过轻轻点击一串电话号码来方便地直接联系你，这功能被称作 Click to call。"
 article:
@@ -69,6 +71,6 @@ NIST Telephone Time-of-Day Service <a href="tel:+1-303-499-7111">+1 (303) 499-71
 
 ## click to call 的其他特点
 
-除了 `tel:` 格式, 一些现代浏览器也支持 `sms:` 和 `mms:` 格式，尽管这些支持并不一致，而且像设置 message body 等一些功能时也不总是奏效的。
+除了 `tel:` 格式, 一些现代浏览器也支持 `sms:` 和 `mms:` 格式，但是这些支持并不一致，而且像设置 message body 等一些功能时也不总是奏效的。
 
 {% endwrap %}
